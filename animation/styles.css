@@ -1,0 +1,65 @@
+body {
+  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+
+.dropBtn {
+  cursor: pointer;
+  padding: 14px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  border: none;
+}
+.dropBtn.dropBtn:hover, .dropBtn .dropBtn:focus {
+  background-color: grey;
+}
+
+.dropMenu {
+  position: relative;
+  display: inline-block;
+}
+
+.myContent {
+  display: none;
+  position: absolute;
+  background-color: silver;
+  overflow: auto;
+}
+.myContent a {
+  color: black;
+  min-width: 112px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid black;
+}
+.myContent a:hover {
+  background-color: grey;
+}
+
+.show {
+  display: block;
+}
+
+#myLocation {
+  background-color: black;
+  color: white;
+  padding: 14px;
+  border: none;
+  cursor: pointer;
+}
+#myLocation:hover {
+  background-color: grey;
+}
+
+#yo {
+  background-color: black;
+  color: white;
+  padding: 14px;
+  border: none;
+  cursor: pointer;
+}
+#yo:hover {
+  background-color: grey;
+}
+
+/*# sourceMappingURL=styles.css.map */
