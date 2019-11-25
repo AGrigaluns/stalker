@@ -28,9 +28,8 @@ $menu = [
 ];
 
 $menu2 = [
-    ['label' => 'Blog', 'url' => 'blog.php'],
     ['label' => 'Story', 'url' => 'story.php'],
-    ['label' => 'Projects', 'url' => 'projects.php']
+    ['label' => 'Blog', 'url' => 'blog.php']
 ]
 
 
@@ -83,11 +82,9 @@ $menu2 = [
             </button>
         </form>
     </div>
+    <?php foreach ($menu2 as $entry) : ?>
         <div id="mySidenav" class="sidenav">
-            <?php foreach ($menu2 as $entry) : ?>
             <a href="<?= $entry['url'] ?>" id="story"><?= $entry['label'] ?></a>
-            <a href="<?= $entry['url'] ?>" id="blog"><?= $entry['label'] ?></a>
-            <a href="#" id="projects">Projects</a>
             <?php endforeach; ?>
         </div>
 </nav>
