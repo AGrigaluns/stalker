@@ -921,258 +921,266 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="232" parent="2" name="character_type"/>
-    <table id="233" parent="2" name="community"/>
-    <table id="234" parent="2" name="community_types"/>
-    <table id="235" parent="2" name="entities"/>
-    <table id="236" parent="2" name="feed"/>
-    <table id="237" parent="2" name="message"/>
-    <table id="238" parent="2" name="news"/>
-    <table id="239" parent="2" name="products"/>
-    <table id="240" parent="2" name="shop"/>
-    <table id="241" parent="2" name="user_dat"/>
-    <column id="242" parent="232" name="id">
+    <table id="233" parent="2" name="entities"/>
+    <table id="234" parent="2" name="feed"/>
+    <table id="235" parent="2" name="message"/>
+    <table id="236" parent="2" name="news"/>
+    <table id="237" parent="2" name="products"/>
+    <table id="238" parent="2" name="shop"/>
+    <table id="239" parent="2" name="user_dat"/>
+    <column id="240" parent="232" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="232" name="name">
+    <column id="241" parent="232" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="244" parent="232" name="PRIMARY">
+    <key id="242" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="245" parent="233" name="id">
+    <column id="243" parent="233" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="233" name="name">
+    <column id="244" parent="233" name="char_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="247" parent="233" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="248" parent="234" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="249" parent="234" name="title">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="250" parent="234" name="sec_title">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="251" parent="234" name="pic">
-      <Position>4</Position>
-      <DataType>blob|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="252" parent="234" name="description">
-      <Position>5</Position>
-      <DataType>longtext|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="253" parent="234" name="community_types_id_index">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="254" parent="234" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="255" parent="234" name="community_types_community_id_fk">
-      <ColNames>id</ColNames>
-      <RefTableName>community</RefTableName>
-      <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="256" parent="235" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="257" parent="235" name="char_name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="258" parent="235" name="char_description">
+    <column id="245" parent="233" name="char_description">
       <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="235" name="picture">
+    <column id="246" parent="233" name="picture">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="235" name="typeId">
+    <column id="247" parent="233" name="typeId">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="261" parent="235" name="character_character_type_id_fk">
+    <index id="248" parent="233" name="character_character_type_id_fk">
       <ColNames>typeId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="262" parent="235" name="PRIMARY">
+    <key id="249" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="263" parent="235" name="character_character_type_id_fk">
+    <foreign-key id="250" parent="233" name="character_character_type_id_fk">
       <ColNames>typeId</ColNames>
       <RefTableName>character_type</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="264" parent="236" name="id">
+    <column id="251" parent="234" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="236" name="title">
+    <column id="252" parent="234" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="236" name="description">
+    <column id="253" parent="234" name="description">
       <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="236" name="img">
+    <column id="254" parent="234" name="img">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="236" name="typeId">
+    <column id="255" parent="234" name="typeId">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="269" parent="236" name="feed_id_index">
+    <index id="256" parent="234" name="feed_id_index">
       <ColNames>id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="270" parent="236" name="feed__typeId">
+    <index id="257" parent="234" name="feed__typeId">
       <ColNames>typeId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="271" parent="236" name="PRIMARY">
+    <key id="258" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="272" parent="236" name="feed_news_id_fk">
+    <foreign-key id="259" parent="234" name="feed_news_id_fk">
       <ColNames>id</ColNames>
       <RefTableName>news</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="273" parent="236" name="feed_news_id_fk_2">
+    <foreign-key id="260" parent="234" name="feed_news_id_fk_2">
       <ColNames>id</ColNames>
       <RefTableName>news</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="274" parent="237" name="id">
+    <column id="261" parent="235" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="237" name="sender_id">
+    <column id="262" parent="235" name="sender_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="237" name="receiver_id">
+    <column id="263" parent="235" name="receiver_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="237" name="message">
+    <column id="264" parent="235" name="message">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="237" name="new_messages">
+    <column id="265" parent="235" name="new_messages">
       <Position>5</Position>
       <DataType>tinyint(1)|0s</DataType>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="279" parent="237" name="message_user_dat_id_fk">
+    <index id="266" parent="235" name="message_user_dat_id_fk">
       <ColNames>sender_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="280" parent="237" name="message_user_dat_id_fk_2">
+    <index id="267" parent="235" name="message_user_dat_id_fk_2">
       <ColNames>receiver_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="281" parent="237" name="PRIMARY">
+    <key id="268" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="282" parent="237" name="message_user_dat_id_fk">
+    <foreign-key id="269" parent="235" name="message_user_dat_id_fk">
       <ColNames>sender_id</ColNames>
       <RefTableName>user_dat</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="283" parent="237" name="message_user_dat_id_fk_2">
+    <foreign-key id="270" parent="235" name="message_user_dat_id_fk_2">
       <ColNames>receiver_id</ColNames>
       <RefTableName>user_dat</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="284" parent="238" name="id">
+    <column id="271" parent="236" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="238" name="name">
+    <column id="272" parent="236" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="238" name="slug">
+    <column id="273" parent="236" name="slug">
       <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="274" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="275" parent="237" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="276" parent="237" name="product_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="237" name="product_description">
+      <Position>3</Position>
+      <DataType>longtext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="237" name="picture">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="279" parent="237" name="price">
+      <Position>5</Position>
+      <DataType>decimal(5,2 digit)|0s</DataType>
+      <DefaultExpression>0.00</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="280" parent="237" name="id_type">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="281" parent="237" name="shop_id_index">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="282" parent="237" name="products_shop_id_fk">
+      <ColNames>id_type</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="283" parent="237" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="284" parent="237" name="products_shop_id_fk">
+      <ColNames>id_type</ColNames>
+      <RefTableName>shop</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="285" parent="238" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="286" parent="238" name="name">
+      <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1188,87 +1196,17 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="239" name="product_name">
+    <column id="289" parent="239" name="user_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="239" name="product_description">
-      <Position>3</Position>
-      <DataType>longtext|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="291" parent="239" name="picture">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="292" parent="239" name="price">
-      <Position>5</Position>
-      <DataType>decimal(5,2 digit)|0s</DataType>
-      <DefaultExpression>0.00</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="293" parent="239" name="id_type">
-      <Position>6</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="294" parent="239" name="shop_id_index">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="295" parent="239" name="products_shop_id_fk">
-      <ColNames>id_type</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="296" parent="239" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="297" parent="239" name="products_shop_id_fk">
-      <ColNames>id_type</ColNames>
-      <RefTableName>shop</RefTableName>
-      <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="298" parent="240" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="299" parent="240" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="300" parent="240" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="301" parent="241" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="302" parent="241" name="user_name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="303" parent="241" name="age">
+    <column id="290" parent="239" name="age">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="304" parent="241" name="PRIMARY">
+    <key id="291" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
