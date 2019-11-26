@@ -46,44 +46,46 @@ $menu = [
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
     <h1>Stalker Deliverance</h1>
 </header>
-<nav>
-    <div id="navBar">
-        <ul class="menu-bar">
-            <?php foreach ($menu as $entry) : ?>
-                <?php if (isset($entry['dropdown'])): ?>
-                    <li class="menu-entry">
+<nav id="navBar">
+    <ul class="menu-bar">
+        <?php foreach ($menu as $entry) : ?>
+            <?php if (isset($entry['dropdown'])): ?>
+                <li class="menu-entry">
                         <span class="dropBtn">
                             <?= $entry['label'] ?>
                             <i class="fa fa-caret-down"></i>
                         </span>
-                        <div class="dropDown">
-                            <ul>
-                                <?php foreach ($entry['dropdown'] as $subEntry) : ?>
-                                    <li class="menu-entry"><a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>"><?= $subEntry['label'] ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </li>
-                <?php else : ?>
-                    <li class="menu-entry"><a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a></li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-        <form id="searchForm" action="search.php" method="POST">
-            <input placeholder="Search..." type="search" id="search" name="stalker">
-            <button id="btn2" type="submit">
-                <i class='fas fa-search'></i>
-            </button>
-        </form>
-    </div>
+                    <div class="dropDown">
+                        <ul>
+                            <?php foreach ($entry['dropdown'] as $subEntry) : ?>
+                                <li class="menu-entry"><a
+                                            href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>"><?= $subEntry['label'] ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </li>
+            <?php else : ?>
+                <li class="menu-entry"><a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a></li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+    <form id="searchForm" action="search.php" method="POST">
+        <input placeholder="Search..." type="search" id="search" name="stalker">
+        <button id="btn2" type="submit">
+            <i class='fas fa-search'></i>
+        </button>
+    </form>
 </nav>
 <div class="kods">
 
