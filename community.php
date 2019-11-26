@@ -41,10 +41,12 @@ $stmt->execute();
 $stmt->bind_result($title, $sec_title, $pic, $description);
 while ($stmt->fetch()) : ?>
 <div class="community">
-    <h4><?= $title ?></h4>
-    <h2><?= $sec_title ?></h2>
+    <h2><?= $title ?></h2>
+    <h5><?= $sec_title ?></h5>
+    <div class="blogImg">
+        <img src="<?= $pic ?>">
+    </div>
     <p><?= $description ?></p>
-    <img src="<?= $pic ?>">
 </div>
 
 <?php

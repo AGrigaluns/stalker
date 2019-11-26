@@ -16,7 +16,7 @@ include 'includes/header.php';
             <h5>Stalker call of Pripyat is stuffed with atmospheric set pieces </h5>
             <div class="blogImg">
                 <img src="img/blogstalker.jpg">
-                <p>he Stalker series (of which this is the third instalment) has always had its standout moments
+                <p>The Stalker series (of which this is the third instalment) has always had its standout moments
                     counterbalanced by irritating lapses in translation and play testing. Call of Pripyat may not shed
                     that inconsistency entirely, but it is the best of the bunch so far.</p>
                 <p>For a start, few games have made better use of lighting – including areas when only torchlight

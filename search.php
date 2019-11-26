@@ -69,7 +69,7 @@ function cmp($result, $results) {
 
 $result = array([3, 2, 5, 6, 1]);
 
-usort($results, "cmp");
+usort($result, "cmp");
 
 
 
