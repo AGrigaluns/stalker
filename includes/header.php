@@ -56,23 +56,27 @@ $menu = [
 </header>
 <nav>
     <div id="navBar">
-
-        <?php foreach ($menu as $entry) : ?>
-        <?php if (isset($entry['dropdown'])): ?>
-            <div class="dropDown">
-                <button class="dropBtn"><?= $entry['label'] ?>
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="content">
-                    <?php foreach ($entry['dropdown'] as $subEntry) : ?>
-                        <a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>"><?= $subEntry['label'] ?></a>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        <?php else : ?>
-            <a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a>
-        <?php endif; ?>
-        <?php endforeach; ?>
+        <ul class="menu-bar">
+            <?php foreach ($menu as $entry) : ?>
+                <?php if (isset($entry['dropdown'])): ?>
+                    <li class="menu-entry">
+                        <span class="dropBtn">
+                            <?= $entry['label'] ?>
+                            <i class="fa fa-caret-down"></i>
+                        </span>
+                        <div class="dropDown">
+                            <ul>
+                                <?php foreach ($entry['dropdown'] as $subEntry) : ?>
+                                    <li class="menu-entry"><a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>"><?= $subEntry['label'] ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </li>
+                <?php else : ?>
+                    <li class="menu-entry"><a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
         <form id="searchForm" action="search.php" method="POST">
             <input placeholder="Search..." type="search" id="search" name="stalker">
             <button id="btn2" type="submit">
