@@ -4,8 +4,35 @@ ini_set('display_errors', E_ALL);
 
 include 'includes/databaseconnect.php';
 
+include 'classes/searchable.php';
+
 include 'includes/header.php';
 
+/**
+ * @param mysqli_stmt $stmt
+ * @param string $stalkerPart
+ * @return array|searchable[]
+ */
+function setResultFromStmt(mysqli_stmt $stmt, $stalkerPart) {
+    /** @var $results searchable[] */
+    $results = [];
+    $request = '%' . $stalkerPart . '%';
+    $stmt->bind_param("ss", $request, $request);
+
+    $stmt->execute();
+
+    $stmt->bind_result($charId, $charName, $charDesc, $charPic);
+
+    while ($stmt->fetch()) {
+        $resultObject = new searchable($charName, $charDesc, $charPic);
+        if (!isset($results[$charId])) {
+            $results[$charId] = $resultObject;
+        }
+        $results[$charId]->highlightResult($stalkerPart);
+    }
+
+    return array_values($results);
+}
 
 if (isset($_POST['stalker'])) {
     $stalker = $_POST["stalker"];
@@ -28,48 +55,54 @@ $stalkerParts = explode(' ' , $stalker);
 $i = 0;
 $q = ' ';
 foreach ($stalkerParts as $stalkerPart) {
-    $request = '%' . $stalkerPart . '%';
+
+    $results = [];
 
     $stmt = $mysqli->prepare("SELECT id, char_name, char_description, picture 
                                     FROM entities 
                                     WHERE char_name LIKE ? OR char_description LIKE ?");
 
-    $stmt->bind_param("ss", $request, $request);
+    $newResults = setResultFromStmt($stmt, $stalkerPart);
 
-    $stmt->execute();
-
-    $stmt->bind_result($charId, $charName, $charDesc, $charPic);
-
-    while ($stmt->fetch()) {
-        $entryId = 'char_'.$charId;
-        if (isset($results[$entryId])) {
-            $results[$entryId]['score']++;
-            $results[$entryId]['description'] = preg_replace('/('.$stalkerPart.')/i', '<strong>'.$stalkerPart.'</strong>', $results[$entryId]['description']);
-        } else {
-            $results[$entryId] = [
-                'title' => $charName,
-                'description' => preg_replace('/('.$stalkerPart.')/i', '<strong>'.$stalkerPart.'</strong>', $charDesc),
-                'picture' => $charPic,
-                'score' => 1
-            ];
-        }
-    }
+    $results = array_merge($results, $newResults);
 
     /* close statement */
     $stmt->close();
+
+    $stmt = $mysqli->prepare("SELECT id, title, description, img 
+                                    FROM feed 
+                                    WHERE title LIKE ? OR description LIKE ?");
+
+    $newResults = setResultFromStmt($stmt, $stalkerPart);
+
+    $results = array_merge($results, $newResults);
+    $stmt->close();
+
+    $stmt = $mysqli->prepare("SELECT id, product_name, product_description, picture 
+                                    FROM products 
+                                    WHERE product_name LIKE ? OR product_description LIKE ?");
+
+    $newResults = setResultFromStmt($stmt, $stalkerPart);
+
+    $results = array_merge($results, $newResults);
+    $stmt->close();
+
+
 }
 /* Bonus sort $results with e.g. usort*/
-
-function cmp($result, $results) {
-    if ($result == $results) {
+/**
+ * @param $a searchable
+ * @param $b searchable
+ * @return int
+ */
+function cmp($a, $b) {
+    if ($a->getScore() == $b->getScore()) {
         return 0;
     }
-    return ($result < $results) ? -1 : 1;
+    return ($a->getScore() > $b->getScore()) ? -1 : 1;
 }
 
-$result = array([3, 2, 5, 6, 1]);
-
-usort($result, "cmp");
+usort($results, "cmp");
 
 
 
@@ -78,15 +111,16 @@ usort($result, "cmp");
  * - explode the string stalker
  * - loop with while or foreach throught the "parts" of exploded string
  * - search each time for the "part"
+ * @var $result searchable
  */
 foreach ($results as $result) : ?>
     <div class="spinner-border text-light" role="status">
         <span class="sr-only">Loading...</span>
     </div>
     <div class="searchTest">
-        <h2><?= $result['title'] ?></h2>
-        <img id="rad" src="img/<?= $result['picture'] ?>">
-        <p><?= $result['description'] ?></p>
+        <h2><?= $result->getName() . ' ' . $result->getScore() ?></h2>
+        <img id="rad" src="img/<?= $result->getPicture() ?>">
+        <p><?= $result->getDescription() ?></p>
     </div>
 <?php endforeach;
 

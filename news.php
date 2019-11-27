@@ -30,21 +30,20 @@ if ($typeId === null) :
 <?php else : ?>
     <?php
 
-    $title  = null;
-    $newsDesc = null;
-    $newsImg = null;
-    $stmt = $mysqli->prepare("SELECT title, description, img FROM feed WHERE id = ?");
-    print_r($mysqli->error);
+    $stmt = $mysqli->prepare("SELECT  title, sec_title, description, img, creation_date FROM feed WHERE typeId = ?");
     $stmt->bind_param("i", $typeId);
 
 
     $stmt->execute();
 
-    $stmt->bind_result($title, $newsDesc, $newsImg);
+    $stmt->bind_result($title, $secTitle, $newsDesc, $newsImg, $createdAtTS);
 
-    while ($stmt->fetch()) : ?>
+    while ($stmt->fetch()) :
+        $createdAt = new DateTime($createdAtTS); ?>
         <div class="news">
+            <span class="date"><?= $createdAt->format('d/m/Y \a\t H:i:s') ?></span>
             <h2><?= $title ?></h2>
+            <h5><?= $secTitle ?></h5>
             <img id="newsPic" src="img/<?= $newsImg ?>">
             <p><?= nl2br($newsDesc) ?></p>
         </div>
