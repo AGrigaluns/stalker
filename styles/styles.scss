@@ -2,74 +2,74 @@ $mainBgColor: #292929;
 
 
 body {
-  background-image: url("../img/stalker3.jpg");
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
+    background-image: url("../img/stalker3.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 .button {
-  background-color: grey;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
+    background-color: grey;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
 }
 
 #btn2 {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #storyHeader {
-  text-align: center;
+    text-align: center;
 }
 
 .header {
-  padding: 30px;
-  font-size: 40px;
-  text-align: center;
-  background-color: #808080;
-  color: black;
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background-color: #808080;
+    color: black;
 }
 
 .leftColumn {
-  float: left;
-  width: 75%;
+    float: left;
+    width: 75%;
 }
 
 .rightColumn {
-  float: right;
-  padding-left: 20px;
-  width: calc(25% - 20px);
+    float: right;
+    padding-left: 20px;
+    width: calc(25% - 20px);
 }
 
 .blogImg {
-  background-color: #aaa;
-  padding: 20px;
+    background-color: #aaa;
+    padding: 20px;
 }
 
 .card {
-  background-color: #808080;
-  padding: 20px;
-  margin-top: 20px;
+    background-color: #808080;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .footer {
-  padding: 20px;
-  text-align: center;
-  background-color: #ddd;
-  margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 800px) {
-  .leftColumn, .rightColumn {
-    width: 100%;
-    padding: 0;
-  }
+    .leftColumn, .rightColumn {
+        width: 100%;
+        padding: 0;
+    }
 }
 
 #navBar {
@@ -175,150 +175,150 @@ header {
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 .kods {
-  border: 1px solid slategray;
-  padding: 20px;
-  margin: 100px auto auto;
-  width: 1000px;
-  background-color: $mainBgColor;
+    border: 1px solid slategray;
+    padding: 20px;
+    margin: 100px auto auto;
+    width: 1000px;
+    background-color: $mainBgColor;
 }
 
 .accordion {
-  background-color: $mainBgColor;
-  color: white;
-  font-family: FontAwesome;
-  cursor: pointer;
-  padding: 14px;
-  width: 100%;
-  text-align: center;
-  border: 1px solid grey;
-  outline: none;
-  transition: 0.4s;
+    background-color: $mainBgColor;
+    color: white;
+    font-family: FontAwesome;
+    cursor: pointer;
+    padding: 14px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid grey;
+    outline: none;
+    transition: 0.4s;
 }
 
 .active, .accordion:hover {
-  background-color: grey;
+    background-color: grey;
 }
 
 .panel {
-  padding: 0 18px;
-  background-color: $mainBgColor;
-  color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+    padding: 0 18px;
+    background-color: $mainBgColor;
+    color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .sticky + .kods {
-  padding-top: 60px;
+    padding-top: 60px;
 }
 
 #story {
-  top: 20px;
-  background-color: $mainBgColor;
+    top: 20px;
+    background-color: $mainBgColor;
 }
 
 #blog {
-  top: 80px;
-  background-color: $mainBgColor;
+    top: 80px;
+    background-color: $mainBgColor;
 }
 
 h3 {
-  text-align: center;
+    text-align: center;
 }
 
 .chat {
-  animation: pulse 5s infinite;
-  animation-direction: alternate;
-  position: fixed;
-  left: 90%;
-  padding: 17px 17px;
-  border-radius: 10px 10px;
-  background-color: #4CAF50;
-  width: 60px;
-  text-align: center;
-  cursor: pointer;
-  color: white;
-  border: none;
-  opacity: 0.8;
-  bottom: 50px;
+    animation: pulse 5s infinite;
+    animation-direction: alternate;
+    position: fixed;
+    left: 90%;
+    padding: 17px 17px;
+    border-radius: 10px 10px;
+    background-color: #4CAF50;
+    width: 60px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    border: none;
+    opacity: 0.8;
+    bottom: 50px;
 }
 
 @keyframes pulse {
-  0% {
-    background-color: #292929;
-  }
-  100% {
-    background-color: #4CAF50;
-  }
+    0% {
+        background-color: #292929;
+    }
+    100% {
+        background-color: #4CAF50;
+    }
 }
 
 .chatPopup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
 }
 
 .formContainer {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-  color: #04A1BF;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    color: #04A1BF;
 
-  textarea {
-    width: calc(100% - 30px);
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-    resize: none;
-    min-height: 50px;
+    textarea {
+        width: calc(100% - 30px);
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 50px;
 
-    &:focus {
-      background-color: #ddd;
-      outline: none;
+        &:focus {
+            background-color: #ddd;
+            outline: none;
+        }
     }
-  }
 
-  .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-    opacity: 0.8;
-  }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
 
-  .cancel {
-    background-color: red;
-  }
+    .cancel {
+        background-color: red;
+    }
 }
 
 .sidenav a:hover, .dropDown:hover .dropBtn {
-  background-color: #ddd;
-  color: black;
+    background-color: #ddd;
+    color: black;
 }
 
 #rad {
-  width: 190px;
+    width: 190px;
 }
 
 #sucker {
-  width: 180px;
+    width: 180px;
 }
 
 #messages {
@@ -344,11 +344,34 @@ h3 {
   .theirs {
     width: 95%;
     border-radius: 10px;
-    background: green;
-    color: white;
-    padding: 10px;
+    border: 10px;
+    background: #eee;
+    color: #008000;
     margin-top: 10px;
-    float: left;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 200px;
+    overflow: scroll;
+
+    .mine {
+      width: 95%;
+      border-radius: 10px;
+      background: blue;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      float: right;
+    }
+
+    .theirs {
+      width: 95%;
+      border-radius: 10px;
+      background: green;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      float: left;
+    }
   }
 }
 
@@ -395,55 +418,71 @@ h3 {
 
   #mysubmit {
     width: 100px;
+    padding: 14px;
+    background: #808080;
+    border: none;
 
+    &:hover {
+      background: #FFCD5D;
+    }
   }
 }
 
+#card {
+    padding: 14px;
+    background: #808080;
+    border: none;
+
+    &:hover {
+        background: #FFCD5D;
+    }
+}
+
 #message {
-  max-width: 650px;
-  height: 200px;
-  width: 95%;
+    max-width: 650px;
+    height: 200px;
+    width: 95%;
 }
 
 #agreement {
-  margin-right: -150px;
+    margin-right: -150px;
 }
 
 .box {
-  height: 250px;
+    height: 250px;
 }
 
 .starpene {
-  margin: auto;
-  padding: 10px;
+    margin: auto;
+    padding: 10px;
 }
 
 .mess-box {
-  max-width: 700px;
-  height: 400px;
-  padding: 4%;
-  background-color: #292929;
-  color: white;
-  width: 95%;
+    max-width: 700px;
+    height: 400px;
+    padding: 4%;
+    background-color: #292929;
+    color: white;
+    width: 95%;
 }
 
 .in-box {
-  width: 600px;
-  height: 100px;
-  border: 2px solid black;
-  padding: 4%;
-  margin: auto;
-  background-color: whitesmoke;
-  box-shadow: 10px 10px 5px 5px #292929;
-  color: black;
+    width: 600px;
+    height: 100px;
+    border: 2px solid black;
+    padding: 4%;
+    margin: auto;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 5px 5px #292929;
+    color: black;
 }
 
 .group {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .user-data {
-  display: none;
+    display: none;
 }
 
 #blogPic {
@@ -455,24 +494,3 @@ h3 {
     opacity: 100%;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
