@@ -81,5 +81,8 @@ $menu = [
             <i class='fas fa-search'></i>
         </button>
     </form>
+    <button id="shopBtn" type="submit">
+        <i class="fas fa-shopping-cart"></i>
+    </button>
 </nav>
 <div class="kods">

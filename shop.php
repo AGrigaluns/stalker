@@ -3,7 +3,7 @@
 ini_set('display_errors', E_ALL);
 
 $data = ['title' => 'shop'];
-include 'includes/databaseconnect.php';
+include 'includes/init.php';
 include 'includes/header.php';
 
 
@@ -34,12 +34,12 @@ $productName = null;
 $productDesc = null;
 $productPic = null;
 $productPrice = null;
-$stmt = $mysqli->prepare("SELECT product_name, product_description, picture, price FROM products WHERE id_type = ?");
+$stmt = $mysqli->prepare("SELECT id, product_name, product_description, picture, price FROM products WHERE id_type = ?");
 print_r($mysqli->error);
 $stmt->bind_param("i", $idType);
 
 $stmt->execute();
-$stmt->bind_result($productName, $productDesc, $productPic, $productPrice);
+$stmt->bind_result($id,$productName, $productDesc, $productPic, $productPrice);
 
 while ($stmt->fetch()) : ?>
     <div class="books">
@@ -47,8 +47,8 @@ while ($stmt->fetch()) : ?>
         <img id="pic" src="img/<?= $productPic ?>">
         <p><?= $productDesc ?></p>
         <p><?= $productPrice ?></p>
-        <button class="buy" id="wasteland">Buy</button>
-        <button class="addCard" id="card">Add to card</button>
+        <button class="buy" id="wasteland-<?= $id ?>">Buy</button>
+        <button class="addCard" id="card-<?= $id ?>">Add to card</button>
     </div>
     <?php
     endwhile;

@@ -166,11 +166,21 @@ $(document).ready(function() {
             }
         });
     });
+    $('.buy').click(function () {
+        let productID = $(this).attr('id');
+        $.post({ url: 'buy.php',
+            data: {product: productID},
+            type: "post",
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
 });
+
 
 function updateMessages(response) {
     let parsedOutput = JSON.parse(response);
-    console.log(parsedOutput);
     if (parsedOutput.results !== 0) {
         parsedOutput.results.forEach(function (message) {
             let dbSender = message.sender;

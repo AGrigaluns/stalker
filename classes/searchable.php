@@ -11,22 +11,22 @@ class searchable
      * This property is private
      * @var string
      */
-    private $_name;
+    protected $_name;
 
     /**
      * @var string
      */
-    private $_description;
+    protected $_description;
 
     /**
      * @var string
      */
-    private $_picture;
+    protected $_picture;
 
     /**
      * @var integer
      */
-    private $_score = 0;
+    protected $_score = 0;
 
     /**
      * searchable constructor.

@@ -1,11 +1,5 @@
 <?php
-
-ini_set('display_errors', E_ALL);
-
-include 'includes/databaseconnect.php';
-
-include 'classes/searchable.php';
-
+include 'includes/init.php';
 include 'includes/header.php';
 
 /**
@@ -38,6 +32,8 @@ if (isset($_POST['stalker'])) {
     $stalker = $_POST["stalker"];
 
 }
+
+$_SESSION['searchterms'][] = $stalker;
 
 echo 'Results for '. $stalker;
 
@@ -89,6 +85,7 @@ foreach ($stalkerParts as $stalkerPart) {
 
 
 }
+var_dump($_SESSION['searchterms']);
 /* Bonus sort $results with e.g. usort*/
 /**
  * @param $a searchable
