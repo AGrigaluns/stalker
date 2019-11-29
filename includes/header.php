@@ -82,7 +82,9 @@ $menu = [
         </button>
     </form>
     <button id="shopBtn" type="submit">
+        <a href="cart.php">
         <i class="fas fa-shopping-cart"></i>
+        </a>
     </button>
 </nav>
 <div class="kods">

@@ -351,21 +351,21 @@ h3 {
   float: left;
 }
 
-#wasteland {
+.buy {
   padding: 14px;
   background: #808080;
   border: none;
 }
-#wasteland:hover {
+.buy:hover {
   background: #FFCD5D;
 }
 
-#card {
+.addCard {
   padding: 14px;
   background: #808080;
   border: none;
 }
-#card:hover {
+.addCard:hover {
   background: #FFCD5D;
 }
 
@@ -468,6 +468,35 @@ h3 {
   float: right;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.table-bordered {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-bordered td .removeItem {
+  padding: 8px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.table-bordered td .removeItem:hover {
+  background-color: #808080;
+}
+.table-bordered td, .table-bordered th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.checkout {
+  float: right;
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+}
+.checkout:hover {
+  background-color: #808080;
 }
 
 /*# sourceMappingURL=styles.css.map */

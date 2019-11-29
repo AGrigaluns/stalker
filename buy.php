@@ -26,8 +26,9 @@ if (isset($_POST["add"])){
         if (!in_array($_GET["id"],$item_array_id)){
             $item_array = array(
                 'product_id' => $_GET["id"],
-                'product_name' => $_POST["hidden_name"],
-                'product_price' => $_POST["hidden_price"],
+                'product_name' => $_POST["name"],
+                'product_price' => $_POST["price"],
+                'product_description' => $_POST["description"],
                 'item_picture' => $_POST["picture"],
             );
             $_SESSION["cart"][] = $item_array;
@@ -38,11 +39,12 @@ if (isset($_POST["add"])){
     } else{
         $item_array = array(
             'product_id' => $_GET["id"],
-            'product_name' => $_POST["hidden_name"],
-            'product_price' => $_POST["hidden_price"],
+            'product_name' => $_POST["name"],
+            'product_price' => $_POST["price"],
+            'product_description' => $_POST["description"],
             'item_picture' => $_POST["picture"],
         );
-        $_SESSION["cart"][0] = $item_array;
+        $_SESSION["cart"][] = $item_array;
     }
 }
 if (isset($_GET["action"])){
@@ -50,6 +52,7 @@ if (isset($_GET["action"])){
         foreach ($_SESSION["cart"] as $keys => $value){
             if ($value["product_id"] == $_GET["id"]){
                 unset($_SESSION["cart"][$keys]);
+                echo json_encode(['results' => 'Item removed']);
             }
         }
     }

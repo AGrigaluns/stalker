@@ -178,7 +178,6 @@ $(document).ready(function() {
     });
 });
 
-
 function updateMessages(response) {
     let parsedOutput = JSON.parse(response);
     if (parsedOutput.results !== 0) {

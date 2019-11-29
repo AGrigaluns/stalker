@@ -375,7 +375,7 @@ h3 {
   }
 }
 
-#wasteland {
+.buy {
   padding: 14px;
   background: #808080;
   border: none;
@@ -385,7 +385,7 @@ h3 {
   }
 }
 
-#card {
+.addCard {
   padding: 14px;
   background: #808080;
   border: none;
@@ -502,3 +502,33 @@ h3 {
   margin-right: 10px;
   cursor: pointer;
 }
+
+.table-bordered {
+  border-collapse: collapse;
+  width: 100%;
+  & td .removeItem {
+    padding: 8px;
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    &:hover {
+      background-color: #808080;
+    }
+  }
+  & td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+.checkout {
+  float: right;
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  &:hover {
+    background-color: #808080;
+  }
+}
+
