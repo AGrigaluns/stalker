@@ -47,8 +47,7 @@ while ($stmt->fetch()) : ?>
         <img id="pic" src="img/<?= $productPic ?>">
         <p><?= $productDesc ?></p>
         <p><?= $productPrice ?></p>
-        <button class="buy"><?= $id ?>Buy</button>
-        <button class="addCard"><?= $id ?>Add to card</button>
+        <button class="buy" id="<?= $id ?>">Buy</button>
     </div>
     <?php
     endwhile;

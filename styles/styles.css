@@ -4,6 +4,11 @@ body {
   color: white;
 }
 
+a {
+  text-decoration: none;
+  color: #100a1c;
+}
+
 .button {
   background-color: grey;
   border: none;
@@ -473,6 +478,10 @@ h3 {
 .table-bordered {
   border-collapse: collapse;
   width: 100%;
+  color: white;
+}
+.table-bordered tbody img {
+  max-width: 100px;
 }
 .table-bordered td .removeItem {
   padding: 8px;
@@ -490,10 +499,11 @@ h3 {
 }
 
 .checkout {
-  float: right;
+  position: relative;
   cursor: pointer;
   border: none;
   padding: 8px;
+  margin-top: 20px;
 }
 .checkout:hover {
   background-color: #808080;

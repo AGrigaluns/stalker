@@ -114,7 +114,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@44760d2d" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@51b07057" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -150,7 +150,9 @@
       <workItem from="1574773229523" duration="58006000" />
       <workItem from="1575027211638" duration="24000" />
       <workItem from="1575027250275" duration="65000" />
-      <workItem from="1575027555200" duration="10069000" />
+      <workItem from="1575027555200" duration="33025000" />
+      <workItem from="1575360755726" duration="10210000" />
+      <workItem from="1575379033100" duration="12819000" />
     </task>
     <servers />
   </component>
@@ -171,10 +173,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="2476" y="182" key="#Inspections" timestamp="1575384132217">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2476" y="182" key="#Inspections/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575384132217" />
+    <state x="2476" y="182" key="#Libraries" timestamp="1575274377767">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2476" y="182" key="#Libraries/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575274377767" />
     <state x="2476" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575027313695">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2476" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575027313695" />
+    <state x="2564" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575379019736">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2564" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575379019736" />
     <state x="2476" y="297" key="EditFileWatcherDialog" timestamp="1575028190050">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -199,9 +213,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2377" y="155" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575028191878" />
-    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1575027558747">
+    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1575379035921">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575027558747" />
+    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575379035921" />
   </component>
 </project>

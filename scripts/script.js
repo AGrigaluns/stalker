@@ -172,11 +172,120 @@ $(document).ready(function() {
             data: {product: productID},
             type: "post",
             success: function (response) {
-                console.log(response);
+                /**
+                 * display warning message and update amount of products in cart
+                 */
+                let parsedResponse = JSON.parse(response);
+                $('#alerts').html(parsedResponse.results);
+                $('#amountInCart').html(parsedResponse.qtyincart);
             }
         });
     });
 });
+
+/*
+function addList(param) {
+    $.ajax ({
+        type: "POST",
+        url: "ajax/cart.php",
+        data: 'img='+encodeURIComponent(param),
+        dataType: 'json',
+            beforeSend: function (x) {
+            $('#ajax-loader').css('visibility', 'hidden');
+                if(parseInt(msg.status)!=1)
+                {
+                    return false;
+                }
+                else
+                {
+                    let check=false;
+                    let cnt = false;
+
+                    for(let i=0; i<purchased.length;i++)
+                    {
+                        if(purchased[i].id==msg.id)
+                        {
+                            check=true;
+                            cnt=purchased[i].cnt;
+
+                            break;
+                        }
+                    }
+
+                    if(!cnt)
+                        $('#item-list').append(msg.txt);
+
+                    if(!check)
+                    {
+                        purchased.push({id:msg.id,cnt:1,price:msg.price});
+                    }
+
+                    else
+                    {
+                        if(cnt>=3) return false;
+
+                        purchased[i].cnt++;
+                        $('#'+msg.id+'_cnt').val(purchased[i].cnt);
+                    }
+
+                    totalprice+=msg.price;
+                    update_total();
+
+                }
+
+                $('.tooltip').hide();
+
+            }
+    });
+}
+
+function findpos(id)
+{
+    for(var i=0; i<purchased.length;i++)
+    {
+        if(purchased[i].id==id)
+            return i;
+    }
+
+    return false;
+}
+
+function remove(id)
+{
+    var i=findpos(id);
+
+    totalprice-=purchased[i].price*purchased[i].cnt;
+    purchased[i].cnt = 0;   // reset the counter
+
+    $('#table_'+id).remove();
+    update_total();
+}
+
+function change(id)
+{
+    let i=findpos(id);
+
+    totalprice+=(parseInt($('#'+id+'_cnt').val())-purchased[i].cnt)*purchased[i].price;
+
+    purchased[i].cnt=parseInt($('#'+id+'_cnt').val());
+    update_total();
+}
+
+function update_total()
+{
+    if(totalprice)
+    {
+        $('#total').html('total: $'+totalprice);
+        $('a.button').css('display','block');
+    }
+    else
+    {
+        $('#total').html('');
+        $('a.button').hide();
+    }
+}
+
+ */
 
 function updateMessages(response) {
     let parsedOutput = JSON.parse(response);
