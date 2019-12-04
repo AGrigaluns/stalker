@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75316570-bd07-45c4-8368-38a228d1780f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/clearCart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/removeItem.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buy.php" beforeDir="false" afterPath="$PROJECT_DIR$/buy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/displayresult.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.scss" afterDir="false" />
@@ -152,7 +154,7 @@
       <workItem from="1575027250275" duration="65000" />
       <workItem from="1575027555200" duration="33025000" />
       <workItem from="1575360755726" duration="10210000" />
-      <workItem from="1575379033100" duration="12819000" />
+      <workItem from="1575379033100" duration="34596000" />
     </task>
     <servers />
   </component>
@@ -209,6 +211,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1291" height="202" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575028592600" />
+    <state x="2698" y="446" key="NewPhpFileDialog" timestamp="1575468811171">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2698" y="446" key="NewPhpFileDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575468811171" />
     <state x="2377" y="155" key="SettingsEditor" timestamp="1575028191878">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

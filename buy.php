@@ -34,16 +34,6 @@ foreach ($_SESSION["cart"] as $item) {
     $totalQty += $item['qty'];
 }
 
-/**
- * foreach ($_SESSION["cart"] as $qty) {
- *
- * $productName = $qty["product_name"];
- * $productDescription = $qty["product_description"];
- * $productPicture = $qty["product_picture"];
- * $product_qty = $qty["product_qty"];
- * $productPrice = $qty["product_price"];
- * }
- */
 
 echo json_encode(['results' => $message, 'qtyincart' => $totalQty]);
 

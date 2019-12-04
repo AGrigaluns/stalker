@@ -28,8 +28,10 @@ $menu = [
 ];
 $totalQty = 0;
 
-foreach ($_SESSION["cart"] as $item) {
-    $totalQty += $item['qty'];
+if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
+    foreach ($_SESSION["cart"] as $item) {
+        $totalQty += $item['qty'];
+    }
 }
 ?>
 
@@ -39,7 +41,6 @@ foreach ($_SESSION["cart"] as $item) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <title>Javascript/php</title>
-    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script
@@ -53,6 +54,7 @@ foreach ($_SESSION["cart"] as $item) {
             crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 <header>

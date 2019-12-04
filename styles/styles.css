@@ -1,7 +1,7 @@
 body {
   background-image: url("../img/stalker3.jpg");
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: #ffffff;
 }
 
 a {
@@ -478,7 +478,7 @@ h3 {
 .table-bordered {
   border-collapse: collapse;
   width: 100%;
-  color: white;
+  color: #ffffff;
 }
 .table-bordered tbody img {
   max-width: 100px;
@@ -506,6 +506,17 @@ h3 {
   margin-top: 20px;
 }
 .checkout:hover {
+  background-color: #808080;
+}
+
+.clearCart {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  margin-top: 20px;
+}
+.clearCart:hover {
   background-color: #808080;
 }
 

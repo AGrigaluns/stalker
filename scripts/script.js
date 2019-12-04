@@ -37,7 +37,6 @@ function openForm() {
 function closeForm() {
     document.getElementById("chatForm2").style.display = "none";
 }
-console.log('loqded');
 
 function setCookie(cname, cvalue, cdays) {
     let d = new Date();
@@ -79,7 +78,6 @@ if (typeof cookieValue !== 'undefined' && cookieValue !== '') {
 $("#myForm").on('submit', function (ev) {
     ev.preventDefault();
     let d = new Date();
-    console.log($("#date"));
     $("#date").html(d.toDateString());
 
     let name = $("#firstname").val();
@@ -87,8 +85,6 @@ $("#myForm").on('submit', function (ev) {
     let mail = $("#email").val();
     let phone = $("#phone").val();
     let message = $("#message").val();
-
-    console.log($('#user-data'));
 
     $("#name1").html(name + " " + secname);
     $("#email1").html(mail);
@@ -112,7 +108,6 @@ $("#myForm").on('submit', function (ev) {
 
 $(document).ready(function() {
     $(".btn").click(function(e){
-        console.log(e);
         e.preventDefault();
         let clickBtnValue = $(this).val();
         let username = $("#sender").val();
@@ -181,111 +176,45 @@ $(document).ready(function() {
             }
         });
     });
-});
 
-/*
-function addList(param) {
-    $.ajax ({
-        type: "POST",
-        url: "ajax/cart.php",
-        data: 'img='+encodeURIComponent(param),
-        dataType: 'json',
-            beforeSend: function (x) {
-            $('#ajax-loader').css('visibility', 'hidden');
-                if(parseInt(msg.status)!=1)
-                {
-                    return false;
+    $('.clearCart').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            headers: { "cache-control": "no-cache" },
+            url: 'clearCart.php',
+            async: true,
+            cache: false,
+            success: function(data){
+                if (data == 1) {
+                    //$('#amountInCart').html('');
+                    location.reload();
+                    //update amount in cart
+                    //refresh page
                 }
-                else
-                {
-                    let check=false;
-                    let cnt = false;
-
-                    for(let i=0; i<purchased.length;i++)
-                    {
-                        if(purchased[i].id==msg.id)
-                        {
-                            check=true;
-                            cnt=purchased[i].cnt;
-
-                            break;
-                        }
-                    }
-
-                    if(!cnt)
-                        $('#item-list').append(msg.txt);
-
-                    if(!check)
-                    {
-                        purchased.push({id:msg.id,cnt:1,price:msg.price});
-                    }
-
-                    else
-                    {
-                        if(cnt>=3) return false;
-
-                        purchased[i].cnt++;
-                        $('#'+msg.id+'_cnt').val(purchased[i].cnt);
-                    }
-
-                    totalprice+=msg.price;
-                    update_total();
-
-                }
-
-                $('.tooltip').hide();
-
             }
+        })
     });
-}
 
-function findpos(id)
-{
-    for(var i=0; i<purchased.length;i++)
-    {
-        if(purchased[i].id==id)
-            return i;
-    }
-
-    return false;
-}
-
-function remove(id)
-{
-    var i=findpos(id);
-
-    totalprice-=purchased[i].price*purchased[i].cnt;
-    purchased[i].cnt = 0;   // reset the counter
-
-    $('#table_'+id).remove();
-    update_total();
-}
-
-function change(id)
-{
-    let i=findpos(id);
-
-    totalprice+=(parseInt($('#'+id+'_cnt').val())-purchased[i].cnt)*purchased[i].price;
-
-    purchased[i].cnt=parseInt($('#'+id+'_cnt').val());
-    update_total();
-}
-
-function update_total()
-{
-    if(totalprice)
-    {
-        $('#total').html('total: $'+totalprice);
-        $('a.button').css('display','block');
-    }
-    else
-    {
-        $('#total').html('');
-        $('a.button').hide();
-    }
-}
-
- */
+    $('.removeItem').click(function(e) {
+        e.preventDefault();
+        let productId = $(this).attr('id');
+        $.ajax({
+            type: 'POST',
+            headers: { "cache-control": "no-cache" },
+            url: 'removeItem.php',
+            async: true,
+            cache: false,
+            dataType : "json",
+            data : {'productId' : productId},
+            success: function(data){
+                if (data == 1) {
+                    location.reload();
+                }
+            }
+        })
+    });
+});
 
 function updateMessages(response) {
     let parsedOutput = JSON.parse(response);

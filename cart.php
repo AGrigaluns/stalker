@@ -50,7 +50,7 @@ else :
                     <td><?= $price ?></td>
                     <td><?= $lineTotal ?></td>
                     <td>
-                        <button type="button" name="removeItem" class="removeItem" id="item_<?= $productId ?>">Remove</button>
+                        <button type="button" name="removeItem" class="removeItem" id="item_<?= $productId ?>">x</button>
                     </td>
                 </tr>
                 <!-- endforeach -->
@@ -79,7 +79,7 @@ else :
             </tr>
             </tfoot>
         </table>
-        <button class="checkout" type="button" name="emptycart">Empty cart</button>
+        <button class="clearCart" type="button" name="emptycart" value="Remove all">Empty cart</button>
         <button class="checkout" type="button" name="checkout">Proceed to checkout</button>
     </div>
 

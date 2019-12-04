@@ -1,5 +1,5 @@
 $mainBgColor: #292929;
-$mainFontColor: white;
+$mainFontColor: #ffffff;
 
 
 body {
@@ -535,6 +535,17 @@ h3 {
 }
 
 .checkout {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  margin-top: 20px;
+  &:hover {
+    background-color: #808080;
+  }
+}
+
+.clearCart {
   position: relative;
   cursor: pointer;
   border: none;
