@@ -7,14 +7,17 @@ include 'includes/init.php';
  * Return 1 in case of success, 0 in case of failure
  */
 
-$productId = $_POST['productId'];
-$productId = explode(",", $productId);
-if(isset($_GET['productId']) & !empty($_GET['productId'])){
-    $productId = $_GET['productId'];
-    unset($productId['productId']);
-    $productId = implode(",", $productId);
-    $_SESSION['cart'] = $productId;
+$_POST['productId'];
+explode(',', $_POST['productId']);
+unset($_POST['productId']);
+if ($_POST['productId'] === 1) {
+    return ('Success');
+} else {
+   if ($_POST['productId'] === 0) {
+       return ("failure");
+   }
 }
+
 
 
 
