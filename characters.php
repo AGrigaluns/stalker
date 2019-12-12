@@ -2,7 +2,8 @@
 
 ini_set('display_errors', E_ALL);
 
-include 'includes/databaseconnect.php';
+include 'includes/init.php';
+
 
 $type = htmlentities($_GET['type']);
 

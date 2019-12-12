@@ -61,6 +61,9 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
     <h1>Stalker Deliverance</h1>
 </header>
 <nav id="navBar">
+    <button type="button" id="burger">
+        <i class="fas fa-bars"></i>
+    </button>
     <ul class="menu-bar">
         <?php foreach ($menu as $entry) : ?>
             <?php if (isset($entry['dropdown'])): ?>
@@ -85,7 +88,7 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
         <?php endforeach; ?>
     </ul>
     <form id="searchForm" action="search.php" method="POST">
-        <input placeholder="Search..." type="search" id="search" name="stalker">
+                <input placeholder="Search..." type="search" id="search" name="stalker">
         <button id="btn2" type="submit">
             <i class='fas fa-search'></i>
         </button>

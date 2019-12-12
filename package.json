@@ -1,0 +1,31 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AGrigaluns/stalker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AGrigaluns/stalker/issues"
+  },
+  "homepage": "https://github.com/AGrigaluns/stalker#readme",
+  "sass": {
+    "includePaths": [
+      "./node_modules"
+    ]
+  }
+}

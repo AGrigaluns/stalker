@@ -85,7 +85,7 @@ foreach ($stalkerParts as $stalkerPart) {
 
 
 }
-var_dump($_SESSION['searchterms']);
+
 /* Bonus sort $results with e.g. usort*/
 /**
  * @param $a searchable
@@ -111,9 +111,6 @@ usort($results, "cmp");
  * @var $result searchable
  */
 foreach ($results as $result) : ?>
-    <div class="spinner-border text-light" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
     <div class="searchTest">
         <h2><?= $result->getName() . ' ' . $result->getScore() ?></h2>
         <img id="rad" src="img/<?= $result->getPicture() ?>">

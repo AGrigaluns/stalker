@@ -2,6 +2,8 @@
 
 ini_set('display_errors', E_ALL);
 
+include 'includes/init.php';
+
 include 'includes/header.php';
 
 

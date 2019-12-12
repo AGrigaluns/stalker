@@ -23,9 +23,8 @@ else :
         <table class="table-bordered">
             <thead>
             <tr>
+                <th>Product</th>
                 <th>Product Name</th>
-                <th>Description</th>
-                <th>Pictures</th>
                 <th>Qty</th>
                 <th>Price</th>
                 <th>Total</th>
@@ -43,21 +42,35 @@ else :
                 $lineTotal = (float)$price * (int)$item['qty'];
                 $total += $lineTotal; ?>
                 <tr>
+                    <td><img src="img/<?= $picture ?>" alt="<?= $productName ?>"/></td>
                     <td><?= $productName ?></td>
-                    <td><?= $productDescription ?></td>
-                    <td><img src="img/<?= $picture ?>" alt="<?= $productName ?>" /></td>
-                    <td><?= $item['qty'] ?></td>
-                    <td><?= $price ?></td>
-                    <td><?= $lineTotal ?></td>
                     <td>
-                        <button type="button" name="removeItem" class="removeItem" id="item_<?= $productId ?>">x</button>
+                        <div class="input-group plus-minus-input">
+                            <div class="input-group-button">
+                                <button type="button" class="button hollow circle minus-btn increment-btn" data-quantity="minus"
+                                        data-field="quantity">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </button>
+                                <input class="input-group-field qty" type="text" name="quantity" value="<?= $item['qty'] ?>"
+                                       id="qty_<?= $productId ?>" disabled>
+                                <button type="button" class="button hollow circle plus-btn increment-btn" data-quantity="plus"
+                                        data-field="quantity">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                    <td><?= $price ?></td>
+                    <td id="linetotal_<?= $productId ?>" class="lineTotal"><?= $lineTotal ?></td>
+                    <td>
+                        <button type="button" name="removeItem" class="removeItem" id="item_<?= $productId ?>">x
+                        </button>
                     </td>
                 </tr>
                 <!-- endforeach -->
             <?php endforeach; ?>
             <?php
-                $vat = round($total * 0.21, 2);
-            ?>
+            $vat = round($total * 0.21, 2);
             ?>
             </tbody>
             <tfoot>
@@ -67,7 +80,7 @@ else :
             </tr>
             <tr>
                 <th>Total (tax excl.)</th>
-                <th><?= $total - $vat ?></th>
+                <th id="totalExclTax"><?= $total - $vat ?></th>
             </tr>
             <tr>
                 <th>VAT</th>

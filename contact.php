@@ -2,6 +2,8 @@
 
 ini_set('display_errors', E_ALL);
 
+include 'includes/init.php';
+
 $data = ['title' => 'anomalies'];
 
 include 'includes/header.php';

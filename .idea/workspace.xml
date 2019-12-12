@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75316570-bd07-45c4-8368-38a228d1780f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/incrementShop.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/characters.php" beforeDir="false" afterPath="$PROJECT_DIR$/characters.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/removeItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/removeItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story.php" beforeDir="false" afterPath="$PROJECT_DIR$/story.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.scss" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,21 +59,22 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="chat: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="chat: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="products: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="playground" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../main/main.js" root0="FORCE_HIGHLIGHTING" />
@@ -79,6 +97,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
@@ -94,17 +113,20 @@
       <recent name="$PROJECT_DIR$/styles" />
     </key>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -136,7 +158,10 @@
       <workItem from="1575027555200" duration="33025000" />
       <workItem from="1575360755726" duration="10210000" />
       <workItem from="1575379033100" duration="36863000" />
-      <workItem from="1575534002360" duration="1489000" />
+      <workItem from="1575534002360" duration="2960000" />
+      <workItem from="1575539198240" duration="40214000" />
+      <workItem from="1575969239967" duration="5705000" />
+      <workItem from="1575993146963" duration="20123000" />
     </task>
     <servers />
   </component>
@@ -193,17 +218,25 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1291" height="202" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575028592600" />
-    <state x="2698" y="446" key="NewPhpFileDialog" timestamp="1575468811171">
+    <state x="2698" y="446" key="NewPhpFileDialog" timestamp="1575557857604">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2698" y="446" key="NewPhpFileDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575468811171" />
+    <state x="2698" y="446" key="NewPhpFileDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575557857604" />
     <state x="2377" y="155" key="SettingsEditor" timestamp="1575028191878">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2377" y="155" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575028191878" />
-    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1575534003023">
+    <state x="2593" y="159" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575642004615">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575534003023" />
+    <state x="2593" y="159" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575642004615" />
+    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1575539200078">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2561" y="368" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575539200078" />
+    <state x="2557" y="256" width="645" height="528" key="find.popup" timestamp="1575644709237">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2557" y="256" width="645" height="528" key="find.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1575644709237" />
   </component>
 </project>

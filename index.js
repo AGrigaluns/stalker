@@ -1,3 +1,5 @@
+const jQuery = require('jquery');
+const $ = jQuery;
 window.onscroll = function() {myFunction()};
 
 let navigator = document.getElementById("navBar");
@@ -282,44 +284,17 @@ $(document).ready(function() {
     });
 });
 
-    function updateMessages(response) {
-        let parsedOutput = JSON.parse(response);
-        if (parsedOutput.results !== 0) {
-            parsedOutput.results.forEach(function (message) {
-                let dbSender = message.sender;
-                let sender = $("#user_id").val();
-                let msgClass = 'theirs';
-                if (sender == dbSender) {
-                    msgClass = 'mine';
-                }
-                $('#messages').append('<div class="' + msgClass + '">' + message.text + '</div>');
-            });
-        }
+function updateMessages(response) {
+    let parsedOutput = JSON.parse(response);
+    if (parsedOutput.results !== 0) {
+        parsedOutput.results.forEach(function (message) {
+            let dbSender = message.sender;
+            let sender = $("#user_id").val();
+            let msgClass = 'theirs';
+            if (sender == dbSender) {
+                msgClass = 'mine';
+            }
+            $('#messages').append('<div class="' + msgClass + '">' + message.text + '</div>');
+        });
     }
-
-$('#burger').on('click',function() {
-    $(".menu-bar").slideToggle('300');
-});
-
-$(window).resize(function() {
-    if (($(window).width() >= "980") && (!$(".menu-bar").is(":visible"))) {
-        console.log($(window).width());
-        $(".menu-bar").show();
-    } else if (($(window).width() < "980") && ($(".menu-bar").is(":visible"))) {
-        $(".menu-bar").hide();
-    }
-});
-
-
-
-
-
-
-
-
-/*
-    Get data from the form upon submission (username and message)
-    Make ajax call to sendMessage.php
-    Read answer from the call and inform user (success vs error)
- */
-
+}
