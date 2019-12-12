@@ -208,15 +208,12 @@ $(document).ready(function() {
             url: 'removeItem.php',
             async: true,
             cache: false,
-            dataType: "json",
-            data: {'productId': productId},
-            success: function (data) {
-                if (data == 1) {
-                    if (data == '1') {
-                        location.reload();
-                    } else {
-                        $('#alerts').html(data);
-                    }
+            data : {'productId' : productId},
+            success: function(data){
+                if (data == '1') {
+                    location.reload();
+                } else {
+                    $('#alerts').html(data);
                 }
             }
         })
