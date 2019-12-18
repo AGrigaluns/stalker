@@ -10,8 +10,7 @@ include 'includes/header.php';
 
 <?php
 $id = 1;
-$stmt = $mysqli->prepare("SELECT pictures FROM img_grid WHERE id = ?");
-$stmt->bind_param("i", $id);
+$stmt = $mysqli->prepare("SELECT pictures FROM img_grid");
 
 $stmt->execute();
 

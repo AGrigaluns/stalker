@@ -23,6 +23,10 @@ body button:hover {
   color: #7cfc00;
 }
 
+.outStock {
+  color: #ff0000;
+}
+
 a {
   text-decoration: none;
   color: #100a1c;
