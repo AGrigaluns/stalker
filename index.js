@@ -1,4 +1,4 @@
-const jQuery = require('jquery');
+const jQuery = require('/node_modules/jquery');
 const $ = jQuery;
 window.onscroll = function() {myFunction()};
 
@@ -284,6 +284,7 @@ $(document).ready(function() {
     });
 });
 
+
 function updateMessages(response) {
     let parsedOutput = JSON.parse(response);
     if (parsedOutput.results !== 0) {
@@ -298,3 +299,5 @@ function updateMessages(response) {
         });
     }
 }
+
+

@@ -208,8 +208,8 @@ $(document).ready(function() {
             url: 'removeItem.php',
             async: true,
             cache: false,
-            data : {'productId' : productId},
-            success: function(data){
+            data: {'productId': productId},
+            success: function (data) {
                 if (data == '1') {
                     location.reload();
                 } else {
@@ -306,6 +306,7 @@ $(window).resize(function() {
         $(".menu-bar").hide();
     }
 });
+
 
 
 

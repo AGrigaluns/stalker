@@ -24,7 +24,8 @@ $menu = [
         ]
     ],
     ['label' => 'Story', 'url' => 'news.php?type=story'],
-    ['label' => 'Blog', 'url' => 'blog.php']
+    ['label' => 'Blog', 'url' => 'blog.php'],
+    ['label' => 'Pictures', 'url' => 'imgPage.php']
 ];
 $totalQty = 0;
 

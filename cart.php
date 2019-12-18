@@ -93,7 +93,7 @@ else :
             </tfoot>
         </table>
         <button class="clearCart" type="button" name="emptycart" value="Remove all">Empty cart</button>
-        <button class="checkout" type="button" name="checkout">Proceed to checkout</button>
+        <button class="checkout" type="button" name="checkout"><a href="checkout.php">Proceed to checkout</a></button>
     </div>
 
 <?php

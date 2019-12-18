@@ -1,3 +1,13 @@
+nav {
+  ul {
+    li {
+      a {
+        color: $mainFontColor;
+      }
+    }
+  }
+}
+
 #navBar {
   background-color: $mainBgColor;
   min-height: 50px;
@@ -28,31 +38,30 @@
   }
   ul {
     display: none;
+    list-style-type: none;
+    text-align: center;
   }
 }
 
 @media screen and (min-width: 980px) {
   #navBar {
 
-    /* Responsive menu with problem */
-
     ul {
-      display: none;
+      display: block;
       float: left;
       list-style-type: none;
       margin: 0;
       padding: 0;
-      overflow: hidden;
       li {
         float: left;
-
+        ul {
+          width: 100%;
+        }
         a {
           display: block;
         }
       }
     }
-
-    /*Responsive design ends*/
 
     .menu-bar {
       margin: 0;
@@ -130,3 +139,4 @@
     }
   }
 }
+

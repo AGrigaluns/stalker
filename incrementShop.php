@@ -58,6 +58,9 @@ if ($productId) {
         $error = 'no cart was found';
     }
 }
+
+
+
 echo json_encode(['error' => $error, 'qty' => $qty, 'price' => $price, 'totalId' => '#linetotal_'.$productId]);
 
 /*$increment = $_POST['incrementId'];

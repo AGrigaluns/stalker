@@ -1,17 +1,30 @@
-@import "~bootstrap/scss/bootstrap";
+
 $mainBgColor: #292929;
 $mainFontColor: #ffffff;
 
 body {
-    background-image: url("../img/stalker3.jpg");
-    font-family: Arial, Helvetica, sans-serif;
-    color: $mainFontColor;
+  background-image: url("../img/stalker3.jpg");
+  font-family: Arial, Helvetica, sans-serif;
+  color: $mainFontColor;
   button {
     border: none;
     &:hover {
       background-color: white;
     }
   }
+}
+
+.pic {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.stock {
+  margin-top: 10px;
+}
+
+.inStock {
+  color: #7cfc00;
 }
 
 a {
@@ -43,9 +56,36 @@ a {
 }
 
 .leftColumn {
-    float: left;
-    width: 75%;
+  float: left;
+  width: 73%;
+  margin-left: calc(4% - 13px);
 }
+
+@media screen and (min-width: 400px) {
+  .leftColumn {
+    width: 72%;
+    margin-left: calc(2% - 13px);
+    margin-right: calc(2% - 13px);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .leftColumn {
+    width: 73%;
+    margin-left: calc(4% - 13px);
+    margin-right: calc(4% - 13px);
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .leftColumn {
+    width: 73%;
+    margin-left: calc(4% - 13px);
+    margin-right: calc(4% - 13px);
+  }
+}
+
+
 
 .rightColumn {
     float: right;
@@ -56,6 +96,10 @@ a {
 .blogImg {
     background-color: #aaa;
     padding: 20px;
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .card {
@@ -119,7 +163,7 @@ h1 {
     background-color: $mainBgColor;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1000px) {
   .kods {
     width: 700px;
   }
@@ -412,6 +456,18 @@ h3 {
     margin-right: -150px;
 }
 
+@media screen and (max-width: 980px) {
+  #agreement {
+    margin-right: -100px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #agreement {
+    margin-right: -50px;
+  }
+}
+
 .box {
     height: 250px;
 }
@@ -498,6 +554,9 @@ h3 {
   border: none;
   padding: 8px;
   margin-top: 20px;
+  a {
+    text-decoration: none;
+  }
   &:hover {
     background-color: #808080;
   }
@@ -521,8 +580,8 @@ h3 {
   margin-left: 30px;
   & .input-group-field {
     text-align: center;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 1rem;
+    margin-right: -1rem;
     padding: 0.1rem;
     &::-webkit-inner-spin-button,
     ::-webkit-outer-spin-button {
@@ -535,6 +594,83 @@ h3 {
       padding: 0.25em 0.8em;
     }
   }
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%;
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%;
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%;
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  color: #000000;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.checkOutBtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
 }
 
 

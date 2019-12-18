@@ -52,7 +52,6 @@ if ($typeId === null) :
             <h2><?= $charName ?></h2>
             <img id="rad" src="img/<?= $charPic ?>">
             <p><?= $charDesc ?></p>
-            <button class="button">Anomaly</button>
         </div>
     <?php
     endwhile;
