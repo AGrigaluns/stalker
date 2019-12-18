@@ -41,7 +41,7 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <title>Javascript/php</title>
+    <title><?= $data['title'] ?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script
@@ -76,15 +76,17 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
                     <div class="dropDown">
                         <ul>
                             <?php foreach ($entry['dropdown'] as $subEntry) : ?>
-                                <li class="menu-entry"><a
-                                            href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>"><?= $subEntry['label'] ?></a>
+                                <li class="menu-entry">
+                                    <a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>"><?= $subEntry['label'] ?></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </li>
             <?php else : ?>
-                <li class="menu-entry"><a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a></li>
+                <li class="menu-entry">
+                    <a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a>
+                </li>
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>

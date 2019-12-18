@@ -2,3 +2,4 @@
 includes/databaseconnect.php
 /styles/.sass-cache/
 /node_modules/
+/stalker.sql

@@ -21,7 +21,6 @@ $productId = $parts[1]; //the product id is the second part of the string
 $error = '1';
 $qty = 0;
 $price = 0;
-$_SESSION["cart"]['total'];
 if ($productId) {
     if (isset($_SESSION) && isset($_SESSION['cart'])) {
         if (isset($_SESSION['cart'][$productId])) {

@@ -265,12 +265,17 @@ $(document).ready(function() {
                 if (data.error == 1) {
                     qtyElement.val(data.qty);
                     $(data.totalId).html(data.price);
-                    let totalExclTax = 0;
+                    let totalInclTax = 0;
                     $('.lineTotal').each(function () {
                         let rawHtml = $(this).html();
-                        totalExclTax += parseFloat(rawHtml);
+                        totalInclTax += parseFloat(rawHtml);
                     });
-                    $('#totalExclTax').html(Math.round(totalExclTax * 100) / 100);
+                    totalInclTax = Math.round(totalInclTax * 100) / 100;
+                    let vat = Math.round(totalInclTax * 0.21 * 100) / 100;
+                    let totalExclTax = totalInclTax - vat;
+                    $('#totalExclTax').html(totalExclTax.toFixed(2));
+                    $('#vatBox').html(vat.toFixed(2));
+                    $('#totalInclTax').html(totalInclTax.toFixed(2));
                 } else {
                     $('#alerts').html(data.error);
                 }
