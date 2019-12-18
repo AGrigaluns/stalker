@@ -122,6 +122,11 @@ a {
     padding: 0;
   }
 }
+nav .registration {
+  margin-top: 7px;
+  float: right;
+  margin-right: 10px;
+}
 nav ul li a {
   color: #ffffff;
 }
