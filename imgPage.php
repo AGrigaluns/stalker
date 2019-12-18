@@ -18,7 +18,9 @@ $stmt->bind_result($pictures);
 
 while ($stmt->fetch()) : ?>
 <div class="imgGrid">
-    <img src="img/<?= $pictures ?>">
+    <div class="column">
+        <img src="img/<?= $pictures ?>">
+    </div>
 </div>
 
 <?php
