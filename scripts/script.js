@@ -311,7 +311,14 @@ $(window).resize(function() {
         $(".menu-bar").hide();
     }
 });
+console.log($('.regButton'));
+$('.regButton').click(function (e) {
+    console.log(e);
+    e.preventDefault();
 
+    $('.regForm').slideToggle('300');
+
+});
 
 
 

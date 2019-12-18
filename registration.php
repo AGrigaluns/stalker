@@ -8,6 +8,7 @@ include 'includes/header.php';
 
 <div class="signIn">
     <div class="col-50">
+        <h4>Sign in / Registration</h4>
         <div class="container">
             <h4>Sign in</h4>
             <form>

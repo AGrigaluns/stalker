@@ -10113,6 +10113,7 @@ body button {
 }
 body button:hover {
   background-color: white;
+  color: black;
 }
 
 .pic {
@@ -10625,6 +10626,18 @@ label {
 span.price {
   float: right;
   color: grey;
+}
+
+.regButton {
+  padding: 10px;
+  background-color: #4CAF50;
+  margin-left: 45%;
+  margin-top: 2%;
+  color: #ffffff;
+}
+
+.regForm {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
