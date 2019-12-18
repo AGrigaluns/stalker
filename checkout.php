@@ -66,6 +66,8 @@ include 'includes/header.php';
                 <label>
                     <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                 </label>
+                <script src="https://www.paypal.com/sdk/js?client-id=sb-b2g02623397@personal.example.com"></script>
+                <script>paypal.Buttons().render('body');</script>
                 <input type="submit" value="Continue to checkout" class="checkOutBtn">
             </form>
         </div>

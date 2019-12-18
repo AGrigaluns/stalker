@@ -19,6 +19,6 @@
         <button type="button" class="btnCancel" onclick="closeForm()" id="formClose">Close</button>
     </form>
 </div>
-<script type="text/javascript" src="scripts/script.js"></script>
+<script type="text/javascript" src="dist/main.js"></script>
 </body>
 </html>

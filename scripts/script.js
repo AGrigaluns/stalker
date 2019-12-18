@@ -1,3 +1,5 @@
+import 'bootstrap';
+
 window.onscroll = function() {myFunction()};
 
 let navigator = document.getElementById("navBar");
@@ -17,8 +19,6 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
-
-
 
 function myFunction() {
     if (window.pageYOffset >= sticky) {
@@ -60,7 +60,6 @@ function getCookie(cname) {
     }
     return "";
 }
-
 let cookieValue = getCookie("alvis");
 
 if (typeof cookieValue !== 'undefined' && cookieValue !== '') {

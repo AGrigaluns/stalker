@@ -2,6 +2,10 @@ $mainBgColor: #292929;
 $mainFontColor: #ffffff;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/regular';
 @import "cart";
 @import "nav";
 
@@ -563,9 +567,20 @@ span.price {
   background-color: #4CAF50;
   margin-left: 45%;
   margin-top: 2%;
+  margin-bottom: 2%;
   color: #ffffff;
 }
 
 .regForm {
   display: none;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+.column img {
+  margin-top: 12px;
 }
