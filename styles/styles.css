@@ -12225,14 +12225,19 @@ readers do not read off random characters that represent icons */
   #cart-table td .removeItem {
     padding: 8px;
     border: none;
-    background-color: #ffffff;
     cursor: pointer; }
     #cart-table td .removeItem:hover {
       background-color: #808080; }
   #cart-table td, #cart-table th {
-    border: 1px solid #dddddd;
     text-align: left;
     padding: 8px; }
+    #cart-table td:empty, #cart-table th:empty {
+      visibility: hidden;
+      border: none; }
+  #cart-table .price-cell {
+    text-align: right; }
+  #cart-table .th-qty {
+    text-align: center; }
 
 .checkout {
   position: relative;
@@ -12274,14 +12279,6 @@ readers do not read off random characters that represent icons */
     text-align: center;
     margin-left: auto;
     margin-right: auto; }
-    .plus-minus-input .input-group-button .circle {
-      width: 2em;
-      height: 2em;
-      padding: 0.4em 0;
-      border-radius: 1em;
-      text-align: center;
-      font-size: 0.8em;
-      line-height: 1.42857; }
 
 .checkOutBtn {
   background-color: #4CAF50;
@@ -12432,6 +12429,14 @@ a {
   border: none;
   cursor: pointer;
   padding: 10px; }
+  .button.circle {
+    width: 2em;
+    height: 2em;
+    padding: 0.4em 0;
+    border-radius: 1em;
+    text-align: center;
+    font-size: 0.8em;
+    line-height: 1.42857; }
 
 #btn2 {
   cursor: pointer; }

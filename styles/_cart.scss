@@ -28,16 +28,24 @@
     & td .removeItem {
         padding: 8px;
         border: none;
-        background-color: #ffffff;
         cursor: pointer;
         &:hover {
             background-color: #808080;
         }
     }
     & td, th {
-        border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
+        &:empty{
+            visibility: hidden;
+            border: none;
+        }
+    }
+    .price-cell {
+        text-align: right;
+    }
+    .th-qty {
+        text-align: center;
     }
 }
 
@@ -88,15 +96,6 @@
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        & .circle {
-            width: 2em;
-            height: 2em;
-            padding: 0.4em 0;
-            border-radius: 1em;
-            text-align: center;
-            font-size: 0.8em;
-            line-height: 1.42857;
-        }
     }
 }
 

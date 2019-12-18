@@ -48,6 +48,15 @@ a {
     border: none;
     cursor: pointer;
     padding: 10px;
+    &.circle {
+        width: 2em;
+        height: 2em;
+        padding: 0.4em 0;
+        border-radius: 1em;
+        text-align: center;
+        font-size: 0.8em;
+        line-height: 1.42857;
+    }
 }
 
 #btn2 {

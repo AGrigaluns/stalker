@@ -19,15 +19,13 @@ else :
     ?>
     <div class="table-responsive">
         <h3 class="title2">Shopping Cart Details</h3>
-        <table class="table-bordered" id="cart-table">
+        <table class="table" id="cart-table">
             <thead>
             <tr>
-                <th>Product</th>
-                <th>Product Name</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-                <th>Remove Item</th>
+                <th scope="col">Product</th>
+                <th scope="col" class="th-qty">Qty</th>
+                <th scope="col" class="price-cell">Price</th>
+                <th scope="col" class="price-cell">Total</th>
             </tr>
             </thead>
             <tbody>
@@ -41,33 +39,31 @@ else :
                 $lineTotal = (float)$price * (int)$item['qty'];
                 $total += $lineTotal; ?>
                 <tr>
-                    <td><img src="img/<?= $picture ?>" alt="<?= $productName ?>"/></td>
-                    <td><?= $productName ?></td>
+                    <td>
+                        <span name="removeItem" class="removeItem fa fa-trash-alt" id="item_<?= $productId ?>">
+                        </span>
+                        <img src="img/<?= $picture ?>" alt="<?= $productName ?>"/>
+                        <?= $productName ?>
+                    </td>
                     <td>
                         <div class="input-group plus-minus-input">
                             <div class="input-group-button">
-                                <button type="button" class="button hollow circle minus-btn increment-btn"
+                                <span class="fa fa-minus-circle minus-btn increment-btn"
                                         data-quantity="minus"
                                         data-field="quantity">
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </button>
+                                </span>
                                 <input class="input-group-field qty" type="text" name="quantity"
                                        value="<?= $item['qty'] ?>"
                                        id="qty_<?= $productId ?>" disabled>
-                                <button type="button" class="button hollow circle plus-btn increment-btn"
+                                <span class="fa fa-plus-circle increment-btn plus-btn"
                                         data-quantity="plus"
                                         data-field="quantity">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </button>
+                                </span>
                             </div>
                         </div>
                     </td>
-                    <td><?= $price ?></td>
-                    <td id="linetotal_<?= $productId ?>" class="lineTotal"><?= $lineTotal ?></td>
-                    <td>
-                        <button type="button" name="removeItem" class="removeItem" id="item_<?= $productId ?>">x
-                        </button>
-                    </td>
+                    <td class="price-cell"><?= $price ?></td>
+                    <td id="linetotal_<?= $productId ?>" class="lineTotal price-cell"><?= $lineTotal ?></td>
                 </tr>
                 <!-- endforeach -->
             <?php endforeach; ?>
@@ -77,20 +73,28 @@ else :
             </tbody>
             <tfoot>
             <tr>
+                <td></td>
+                <td></td>
                 <th>Shipping</th>
+                <th class="price-cell">0</th>
+            </tr>
+            <tr>
                 <th></th>
-            </tr>
-            <tr>
+                <th></th>
                 <th>Total (tax excl.)</th>
-                <th id="totalExclTax"><?= number_format($total - $vat, 2) ?></th>
+                <th id="totalExclTax" class="price-cell"><?= number_format($total - $vat, 2) ?></th>
             </tr>
             <tr>
+                <th></th>
+                <th></th>
                 <th>VAT</th>
-                <th id="vatBox"><?= number_format($vat, 2) ?></th>
+                <th id="vatBox" class="price-cell"><?= number_format($vat, 2) ?></th>
             </tr>
             <tr>
+                <th></th>
+                <th></th>
                 <th>Total</th>
-                <th id="totalInclTax"><?= number_format($total, 2) ?></th>
+                <th id="totalInclTax" class="price-cell"><?= number_format($total, 2) ?></th>
             </tr>
             </tfoot>
         </table>
