@@ -42,7 +42,6 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <title><?= $data['title'] ?></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"

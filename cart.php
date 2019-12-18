@@ -19,7 +19,7 @@ else :
     ?>
     <div class="table-responsive">
         <h3 class="title2">Shopping Cart Details</h3>
-        <table class="table-bordered">
+        <table class="table-bordered" id="cart-table">
             <thead>
             <tr>
                 <th>Product</th>
