@@ -10,9 +10,8 @@ include 'includes/header.php';
  * 5- display total with and without VAT and VAT
  * 6- BONUS : propose shipping and payment methods with radio buttons
  */
-
-$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-if (empty($cart)) :
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array(); ?>
+<?php if (empty($cart)) :
     echo "Your cart is empty";
 else :
     $products = array_keys($cart);
@@ -20,7 +19,7 @@ else :
     ?>
     <div class="table-responsive">
         <h3 class="title2">Shopping Cart Details</h3>
-        <table class="table-bordered">
+        <table class="table-bordered" id="cart-table">
             <thead>
             <tr>
                 <th>Product</th>
@@ -47,13 +46,16 @@ else :
                     <td>
                         <div class="input-group plus-minus-input">
                             <div class="input-group-button">
-                                <button type="button" class="button hollow circle minus-btn increment-btn" data-quantity="minus"
+                                <button type="button" class="button hollow circle minus-btn increment-btn"
+                                        data-quantity="minus"
                                         data-field="quantity">
                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                 </button>
-                                <input class="input-group-field qty" type="text" name="quantity" value="<?= $item['qty'] ?>"
+                                <input class="input-group-field qty" type="text" name="quantity"
+                                       value="<?= $item['qty'] ?>"
                                        id="qty_<?= $productId ?>" disabled>
-                                <button type="button" class="button hollow circle plus-btn increment-btn" data-quantity="plus"
+                                <button type="button" class="button hollow circle plus-btn increment-btn"
+                                        data-quantity="plus"
                                         data-field="quantity">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                 </button>
@@ -80,24 +82,20 @@ else :
             </tr>
             <tr>
                 <th>Total (tax excl.)</th>
-                <th id="totalExclTax"><?= $total - $vat ?></th>
+                <th id="totalExclTax"><?= number_format($total - $vat, 2) ?></th>
             </tr>
             <tr>
                 <th>VAT</th>
-                <th><?= $vat ?></th>
+                <th id="vatBox"><?= number_format($vat, 2) ?></th>
             </tr>
             <tr>
                 <th>Total</th>
-                <th><?= $total ?></th>
+                <th id="totalInclTax"><?= number_format($total, 2) ?></th>
             </tr>
             </tfoot>
         </table>
         <button class="clearCart" type="button" name="emptycart" value="Remove all">Empty cart</button>
         <button class="checkout" type="button" name="checkout"><a href="checkout.php">Proceed to checkout</a></button>
     </div>
-
-<?php
-endif;
-include 'includes/footer.php';
-
-?>
+<?php endif; ?>
+<?php include 'includes/footer.php'; ?>

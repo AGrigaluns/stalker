@@ -1,16 +1,7 @@
 <?php
-
-ini_set('display_errors', E_ALL);
-
 include 'includes/init.php';
-
-$data = ['title' => 'anomalies'];
-
 include 'includes/header.php';
-
 ?>
-
-
     <div class="text">
         <h3>About author</h3>
         <p>Let me start this review by stating that I am a computer geek and a gamer. Thus, I was predisposed
@@ -47,8 +38,4 @@ include 'includes/header.php';
             thought dead.</p>
         <p>Will he be able to do it? Only the Zone knows…</p>
     </div>
-<?php
-
-include 'includes/footer.php';
-
-?>
+<?php include 'includes/footer.php'; ?>
