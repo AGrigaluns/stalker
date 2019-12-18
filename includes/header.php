@@ -89,7 +89,7 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
             <span id="amountInCart"><?= $totalQty>0 ? $totalQty : '' ?></span>
         </a>
     </button>
-    <button class="registration"><a href="registration.php"></a>Sign in</button>
+    <button class="registration"><a href="registration.php">Sign in</a></button>
 </nav>
 <div class="kods">
     <div id="alerts"></div>
