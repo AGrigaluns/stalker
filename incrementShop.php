@@ -25,11 +25,11 @@ if ($productId) {
     if (isset($_SESSION) && isset($_SESSION['cart'])) {
         if (isset($_SESSION['cart'][$productId])) {
 
-            $stmt = $mysqli->prepare("SELECT price FROM products WHERE id = ?");
+            $stmt = $mysqli->prepare("SELECT price, in_stock FROM products WHERE id = ?");
 
             $stmt->bind_param("i", $productId);
             $stmt->execute();
-            $stmt->bind_result($pricePerItem);
+            $stmt->bind_result($pricePerItem, $stock);
             $stmt->store_result();
             if ($stmt->num_rows > 0) {
                 $stmt->fetch();
@@ -41,7 +41,12 @@ if ($productId) {
                         }
                         break;
                     case 'increment' :
-                        $_SESSION["cart"][$productId]['qty']++;
+                        if ($_SESSION["cart"][$productId]['qty'] + 1 > $stock) {
+                            $_SESSION["cart"][$productId]['qty'] = $stock;
+                            $error = "We do not have enough stock. Quantity have been reset to the maximum you can get.";
+                        } else {
+                            $_SESSION["cart"][$productId]['qty']++;
+                        }
                         break;
                     default :
                         $error = "Tell me which operation I should do !";

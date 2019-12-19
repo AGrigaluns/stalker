@@ -310,16 +310,17 @@ $(window).resize(function() {
         $(".menu-bar").hide();
     }
 });
-console.log($('.regButton'));
+
+($('.regButton'));
 $('.regButton').click(function (e) {
-    console.log(e);
     e.preventDefault();
-
     $('.regForm').slideToggle('300');
-
 });
 
-
+$('.imgInput').click(function (e) {
+    e.preventDefault();
+    $('#exampleModalCenter').modal('show')
+});
 
 
 

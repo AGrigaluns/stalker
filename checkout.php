@@ -66,8 +66,6 @@ include 'includes/header.php';
                 <label>
                     <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                 </label>
-                <script src="https://www.paypal.com/sdk/js?client-id=sb-b2g02623397@personal.example.com"></script>
-                <script>paypal.Buttons().render('body');</script>
                 <input type="submit" value="Continue to checkout" class="checkOutBtn">
             </form>
         </div>
@@ -81,8 +79,10 @@ include 'includes/header.php';
           <b></b>
         </span>
             </h4>
-            <p><a href="#">Product 1</a> <span class="price">$10</span></p>
-            <p>Total <span class="price"</span></p>
+            <div id="checkout-cart">
+                <?php include 'cart-table.php'; ?>
+            </div>
         </div>
     </div>
 </div>
+<?php include 'includes/footer.php'; ?>

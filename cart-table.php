@@ -1,6 +1,5 @@
 <?php
-include 'includes/init.php';
-include 'includes/header.php';
+
 /**
  * 1- get cart from the session
  * 2- create a variable total that will permit to calculate it
@@ -17,18 +16,18 @@ else :
     $products = array_keys($cart);
     $total = 0.00;
     ?>
-    <div class="table-responsive">
+    <div class="table-responsive2">
         <h3 class="title2">Shopping Cart Details</h3>
-        <table class="table" id="cart-table">
-            <thead>
+        <table class="table2" id="cart-table">
+            <thead class="headTable">
             <tr>
                 <th scope="col">Product</th>
-                <th scope="col" class="th-qty">Qty</th>
-                <th scope="col" class="price-cell">Price</th>
+                <th scope="col" class="th-qty"></th>
+                <th scope="col" class="price-cell"></th>
                 <th scope="col" class="price-cell">Total</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="bodyTable">
             <?php
             $stmt = $mysqli->prepare("SELECT product_name, product_description, picture, price FROM products WHERE id = ?");
             foreach ($cart as $productId => $item) :
@@ -40,29 +39,12 @@ else :
                 $total += $lineTotal; ?>
                 <tr>
                     <td>
-                        <span name="removeItem" class="removeItem fa fa-trash-alt" id="item_<?= $productId ?>">
-                        </span>
                         <img src="img/<?= $picture ?>" alt="<?= $productName ?>"/>
                         <?= $productName ?>
                     </td>
                     <td>
-                        <div class="input-group plus-minus-input">
-                            <div class="input-group-button">
-                                <span class="fa fa-minus-circle minus-btn increment-btn"
-                                        data-quantity="minus"
-                                        data-field="quantity">
-                                </span>
-                                <input class="input-group-field qty" type="text" name="quantity"
-                                       value="<?= $item['qty'] ?>"
-                                       id="qty_<?= $productId ?>" disabled>
-                                <span class="fa fa-plus-circle increment-btn plus-btn"
-                                        data-quantity="plus"
-                                        data-field="quantity">
-                                </span>
-                            </div>
-                        </div>
                     </td>
-                    <td class="price-cell"><?= $price ?></td>
+                    <td class="price-cell"></td>
                     <td id="linetotal_<?= $productId ?>" class="lineTotal price-cell"><?= $lineTotal ?></td>
                 </tr>
                 <!-- endforeach -->
@@ -71,7 +53,7 @@ else :
             $vat = round($total * 0.21, 2);
             ?>
             </tbody>
-            <tfoot>
+            <tfoot class="footTable">
             <tr>
                 <td></td>
                 <td></td>
@@ -98,8 +80,5 @@ else :
             </tr>
             </tfoot>
         </table>
-        <button class="clearCart" type="button" name="emptycart" value="Remove all">Empty cart</button>
-        <button class="checkout" type="button" name="checkout"><a href="checkout.php">Proceed to checkout</a></button>
     </div>
 <?php endif; ?>
-<?php include 'includes/footer.php'; ?>

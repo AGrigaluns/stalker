@@ -15780,16 +15780,27 @@ readers do not read off random characters that represent icons */
 #cart-table td .removeItem {
   padding: 8px;
   border: none;
-  background-color: #ffffff;
   cursor: pointer;
 }
 #cart-table td .removeItem:hover {
   background-color: #808080;
 }
 #cart-table td, #cart-table th {
-  border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+#cart-table td:empty, #cart-table th:empty {
+  visibility: hidden;
+  border: none;
+}
+#cart-table .price-cell {
+  text-align: right;
+}
+#cart-table .price-cell:after {
+  content: " €";
+}
+#cart-table .th-qty {
+  text-align: center;
 }
 
 .checkout {
@@ -15818,22 +15829,28 @@ readers do not read off random characters that represent icons */
 }
 
 .plus-minus-input {
-  align-items: center;
-  margin-left: 30px;
+  display: table;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 .plus-minus-input .input-group-field {
   text-align: center;
-  margin-left: 1rem;
-  margin-right: -1rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
   padding: 0.1rem;
 }
 .plus-minus-input .input-group-field::-webkit-inner-spin-button,
 .plus-minus-input .input-group-field ::-webkit-outer-spin-button {
   appearance: none;
 }
-.plus-minus-input .input-group-button .circle {
-  border-radius: 50%;
-  padding: 0.25em 0.8em;
+.plus-minus-input .input-group-button {
+  width: 90%;
+  height: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .checkOutBtn {
@@ -15846,6 +15863,22 @@ readers do not read off random characters that represent icons */
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
+}
+
+.input-group-button .qty {
+  width: 25px;
+}
+
+.headTable {
+  color: black;
+}
+
+.bodyTable {
+  color: black;
+}
+
+.footTable {
+  color: black;
 }
 
 nav .registration {
@@ -16020,6 +16053,15 @@ a {
   border: none;
   cursor: pointer;
   padding: 10px;
+}
+.button.circle {
+  width: 2em;
+  height: 2em;
+  padding: 0.4em 0;
+  border-radius: 1em;
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1.42857;
 }
 
 #btn2 {
@@ -16526,6 +16568,24 @@ span.price {
 
 .column img {
   margin-top: 12px;
+}
+
+.col {
+  padding: 10px;
+}
+.col img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid grey;
+  opacity: 80%;
+  cursor: pointer;
+}
+.col img:hover {
+  opacity: 100%;
+}
+
+#signBtn {
+  margin-top: 2%;
 }
 
 /*# sourceMappingURL=styles.css.map */
