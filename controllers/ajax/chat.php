@@ -1,5 +1,5 @@
 <?php
-include 'includes/init.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 
 $senderId = $_POST['sender'];
 

@@ -14,7 +14,7 @@
 /** @var string $message the message is stripped of html entities */
 $message = htmlentities($_POST['message']);
 
-include 'includes/databaseconnect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 
 $senderId = null;
 

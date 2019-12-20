@@ -1,5 +1,5 @@
 <?php
-include 'includes/init.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 
 /**
  * Explode the $_POST['productId'] to get the part that contains the id of product (eg substring, explode)
