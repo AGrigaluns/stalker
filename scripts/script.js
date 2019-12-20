@@ -114,7 +114,7 @@ $(document).ready(function() {
         let user_id = $("#user_id").val();
         let reciever_id = $("#reciever_id").val();
         $.ajax({
-            url: 'sendMessage.php',
+            url: 'controllers/ajax/sendMessage.php',
             data: {
                 username: username,
                 message: message,
@@ -140,7 +140,7 @@ $(document).ready(function() {
             let sender = $("#user_id").val();
             let reciever = $("#reciever_id").val();
             $.ajax({
-                url: 'chat.php',
+                url: 'controllers/ajax/chat.php',
                 data: {do: 'new_messages', sender: reciever, reciever: sender},
                 type: "post",
                 success: function (response) {
@@ -154,7 +154,7 @@ $(document).ready(function() {
         let sender = $("#user_id").val();
         let reciever = $("#reciever_id").val();
         $.post({
-            url: 'chat.php',
+            url: 'controllers/ajax/chat.php',
             data: {do: "messages_grab", sender: reciever, reciever: sender},
             type: "post",
             success: function (response) {
@@ -165,7 +165,7 @@ $(document).ready(function() {
     $('.buy').click(function () {
         let productID = $(this).attr('id');
         $.post({
-            url: 'buy.php',
+            url: 'controllers/ajax/buy.php',
             data: {product: productID},
             type: "post",
             success: function (response) {
@@ -184,7 +184,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             headers: {"cache-control": "no-cache"},
-            url: 'clearCart.php',
+            url: 'controllers/ajax/clearCart.php',
             async: true,
             cache: false,
             success: function (data) {
@@ -204,7 +204,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             headers: {"cache-control": "no-cache"},
-            url: 'removeItem.php',
+            url: 'controllers/ajax/removeItem.php',
             async: true,
             cache: false,
             data: {'productId': productId},
@@ -213,29 +213,6 @@ $(document).ready(function() {
                     location.reload();
                 } else {
                     $('#alerts').html(data);
-                }
-            }
-        })
-    });
-
-    $('.fa-plus').click(function (e) {
-        e.preventDefault();
-        let increment = $(this).attr('id');
-        $.ajax({
-            type: 'POST',
-            headers: {"cache-control": "no-cache"},
-            url: 'incrementShop.php',
-            async: true,
-            cache: false,
-            dataType: "json",
-            data: {'incrementId': increment},
-            success: function (data) {
-                if (data == 1) {
-                    if (data == '1') {
-                        location.reload();
-                    } else {
-                        $('#alerts').html(data);
-                    }
                 }
             }
         })
@@ -254,7 +231,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             headers: {"cache-control": "no-cache"},
-            url: 'incrementShop.php',
+            url: 'controllers/ajax/incrementShop.php',
             async: true,
             cache: false,
             data: {'productId': productId, 'operation': operation},

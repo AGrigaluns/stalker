@@ -1,5 +1,5 @@
 <?php
-include 'includes/init.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 $productId = $_POST['product'];
 /**
  * check if product exists and is available in stock
