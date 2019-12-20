@@ -39,7 +39,6 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <title><?= $data['title'] ?></title>
     <link rel="stylesheet" href="styles/styles.css">
@@ -48,30 +47,29 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
 <header>
     <h1>Stalker Deliverance</h1>
 </header>
-<nav id="navBar">
-    <button type="button" id="burger">
-        <i class="fas fa-bars"></i>
+<nav id="navBar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
-    <ul class="menu-bar">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
         <?php foreach ($menu as $entry) : ?>
             <?php if (isset($entry['dropdown'])): ?>
-                <li class="menu-entry">
-                        <span class="dropBtn">
-                            <?= $entry['label'] ?>
-                            <i class="fa fa-caret-down"></i>
-                        </span>
-                    <div class="dropDown">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?= $entry['label'] ?>
+                    </a>
+                    <div class="dropdown-menu">
                         <ul>
                             <?php foreach ($entry['dropdown'] as $subEntry) : ?>
-                                <li class="menu-entry">
-                                    <a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>"><?= $subEntry['label'] ?></a>
-                                </li>
+                                    <a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>" class="dropdown-item"><?= $subEntry['label'] ?></a>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </li>
             <?php else : ?>
-                <li class="menu-entry">
+                <li class="nav-item">
                     <a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a>
                 </li>
             <?php endif; ?>
@@ -90,6 +88,7 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
         </a>
     </button>
     <button class="registration"><a href="registration.php">Sign in</a></button>
+    </div>
 </nav>
 <div class="kods">
     <div id="alerts"></div>

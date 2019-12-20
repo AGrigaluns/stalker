@@ -318,8 +318,15 @@ $('.regButton').click(function (e) {
 });
 
 $('.imgInput').click(function (e) {
+    let srcLg = $(this).data('src');
+    $('#imgInModal').attr('src', srcLg);
+    $('#exampleModalCenter').modal('show');
+});
+
+$('.dropBtn').click(function (e) {
     e.preventDefault();
-    $('#exampleModalCenter').modal('show')
+    console.log($(this).siblings('.dropDown'));
+    $(this).siblings('.dropDown').slideToggle('300');
 });
 
 

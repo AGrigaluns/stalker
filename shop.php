@@ -32,7 +32,7 @@ include 'includes/header.php'; ?>
     <?php while ($stmt->fetch()) : ?>
         <div class="books">
             <h2><?= $productName ?></h2>
-            <img class="pic" src="img/<?= $productPic ?>">
+            <img class="pic" src="img/shop/<?= $productPic ?>">
             <p><?= $productDesc ?></p>
             <p><?= $productPrice ?></p>
             <div class="addToCart">

@@ -2,6 +2,12 @@
 include 'includes/init.php';
 
 include 'includes/header.php';
+
+$stmt = $mysqli->prepare("SELECT pictures, large_pic FROM img_grid");
+
+$stmt->execute();
+
+$stmt->bind_result($picture, $pictureLg);
 ?>
 
 <div class="header-img">
@@ -9,20 +15,10 @@ include 'includes/header.php';
 </div>
 
 <div class="containerImg">
-    <div class="row">
-        <div class="col"><img src="img/index.jpeg" class="imgInput"></div>
-        <div class="col"><img src="img/index2.jpeg" class="imgInput"></div>
-        <div class="col"><img src="img/index3.jpeg" class="imgInput"></div>
-        <div class="col"><img src="img/index4.jpeg" class="imgInput"></div>
-    </div>
-</div>
-
-<div class="containerImg">
-    <div class="row">
-        <div class="col"><img src="img/index5.jpeg" class="imgInput"></div>
-        <div class="col"><img src="img/index6.jpeg" class="imgInput"></div>
-        <div class="col"><img src="img/index7.jpeg" class="imgInput"></div>
-        <div class="col"><img src="img/index8.jpeg" class="imgInput"></div>
+    <div class="imgRow">
+        <?php while ($stmt->fetch()) : ?>
+            <div class="col"><img src="img/grid/<?= $picture ?>" class="imgInput" data-src="img/grid/<?= $pictureLg ?>"></div>
+        <?php endwhile; ?>
     </div>
 </div>
 
@@ -36,7 +32,7 @@ include 'includes/header.php';
                 </button>
             </div>
             <div class="modal-body">
-                <img src="img/index.jpeg">
+                <img src="img/grid/loader.png" class="modalImg" id="imgInModal">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

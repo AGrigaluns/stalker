@@ -44,7 +44,7 @@ if ($typeId === null) :
             <span class="date"><?= $createdAt->format('d/m/Y \a\t H:i:s') ?></span>
             <h2><?= $title ?></h2>
             <h5><?= $secTitle ?></h5>
-            <img id="newsPic" src="img/<?= $newsImg ?>">
+            <img id="newsPic" src="img/news/<?= $newsImg ?>">
             <p><?= nl2br($newsDesc) ?></p>
         </div>
     <?php

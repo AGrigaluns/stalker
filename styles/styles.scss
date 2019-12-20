@@ -10,7 +10,7 @@ $fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
 @import "nav";
 
 body {
-  background-image: url("../img/stalker3.jpg");
+  background-image: url("../img/background/stalker3.jpg");
   font-family: Arial, Helvetica, sans-serif;
   color: $mainFontColor;
   button {
@@ -40,8 +40,7 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: #100a1c;
+  color: black;
 }
 
 .button {
@@ -150,7 +149,7 @@ a {
 }
 
 header {
-  background-image: url("../img/stalker2.jpg");
+  background-image: url("../img/background/stalker2.jpg");
   padding: 30px;
   text-align: center;
   color: black;
@@ -264,13 +263,6 @@ h3 {
     left: 80%;
   }
 }
-@media screen and (max-width: 400px) {
-  .kods {
-    position: fixed;
-    left: 80%;
-  }
-}
-
 
 @keyframes pulse {
     0% {
@@ -607,7 +599,41 @@ span.price {
     }
   }
 }
+@media screen and (min-width: 1001px) {
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+}
 
 #signBtn {
   margin-top: 2%;
+}
+
+.modalImg {
+  width: 100%;
 }

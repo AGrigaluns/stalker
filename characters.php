@@ -50,7 +50,7 @@ if ($typeId === null) :
     while ($stmt->fetch()) : ?>
         <div class="characters">
             <h2><?= $charName ?></h2>
-            <img id="rad" src="img/<?= $charPic ?>">
+            <img id="rad" src="img/zone/<?= $charPic ?>">
             <p><?= $charDesc ?></p>
         </div>
     <?php

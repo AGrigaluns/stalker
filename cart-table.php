@@ -39,7 +39,7 @@ else :
                 $total += $lineTotal; ?>
                 <tr>
                     <td>
-                        <img src="img/<?= $picture ?>" alt="<?= $productName ?>"/>
+                        <img src="img/shop/<?= $picture ?>" alt="<?= $productName ?>"/>
                         <?= $productName ?>
                     </td>
                     <td>
