@@ -1,17 +1,52 @@
+
+.btn-outline-success {
+  color: white;
+  border-color: white;
+  &:hover {
+    border-color: white;
+  }
+}
+
 .navbar-dark{
-  background-color: $mainBgColor;
+  background-color: black;
   .nav-item {
-    margin: auto;
-    padding: 10px;
+    margin-left: 2%;
+  }
+}
+
+.nav-link {
+  &:hover {
+    background-color: #292929;
   }
 }
 
 nav {
   #navbarSupportedContent {
+    #searchForm {
+      #btn2 {
+        padding: 7px;
+        margin-left: 6px;
+      }
+      #search {
+        padding: 5px;
+      }
+    }
     #shopBtn {
       margin-bottom: 7px;
       margin-left: 10px;
-      padding: 0;
+      padding: 7px;
+    }
+    .registration {
+      padding: 7px;
+    }
+    #navbarDropdown {
+      float: left;
     }
   }
 }
+
+/* dropdown-menu needs better style!!! */
+
+
+
+

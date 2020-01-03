@@ -5,9 +5,9 @@ class product extends searchable
 {
     private $_price;
 
-    public function __construct($_name, $_description, $_picture, $_price)
+    public function __construct($_name, $_description, $_picture, $_price = 0)
     {
-        parent::__construct($_name, $_description, $_picture);
+        parent::__construct($_name, $_description, $_picture, "shop");
         $this->_price = $_price;
     }
 

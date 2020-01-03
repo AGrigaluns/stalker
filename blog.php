@@ -41,19 +41,19 @@ include 'includes/header.php';
             <h3>Popular</h3>
             <div class="blogImg">
                 <a href="#">
-                    <img id="blogPic" src="img/blog/forblog.jpg">
+                    <img id="blogPic" class="aboutStalker" src="img/blog/forblog.jpg">
                 </a>
                 <p>About Stalker 1979</p>
             </div>
             <div class="blogImg">
                 <a href="#">
-                <img id="blogPic" src="img/blog/blogpic2.jpeg">
+                <img id="blogPic" class="metro" src="img/blog/blogpic2.jpeg">
                 </a>
                 <p>Metro 2033</p>
             </div>
             <div class="blogImg">
                 <a href="#">
-                <img id="blogPic" src="img/news/stalker2.jpeg">
+                <img id="blogPic" class="secStalker" src="img/news/stalker2.jpeg">
                 </a>
                 <p>Stalker 2</p>
             </div>

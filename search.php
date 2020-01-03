@@ -7,7 +7,7 @@ include 'includes/header.php';
  * @param string $stalkerPart
  * @return array|searchable[]
  */
-function setResultFromStmt(mysqli_stmt $stmt, $stalkerPart) {
+function setResultFromStmt(mysqli_stmt $stmt, $stalkerPart, $classType) {
     /** @var $results searchable[] */
     $results = [];
     $request = '%' . $stalkerPart . '%';
@@ -18,7 +18,7 @@ function setResultFromStmt(mysqli_stmt $stmt, $stalkerPart) {
     $stmt->bind_result($charId, $charName, $charDesc, $charPic);
 
     while ($stmt->fetch()) {
-        $resultObject = new searchable($charName, $charDesc, $charPic);
+        $resultObject = new $classType($charName, $charDesc, $charPic);
         if (!isset($results[$charId])) {
             $results[$charId] = $resultObject;
         }
@@ -58,7 +58,7 @@ foreach ($stalkerParts as $stalkerPart) {
                                     FROM entities 
                                     WHERE char_name LIKE ? OR char_description LIKE ?");
 
-    $newResults = setResultFromStmt($stmt, $stalkerPart);
+    $newResults = setResultFromStmt($stmt, $stalkerPart, "entity");
 
     $results = array_merge($results, $newResults);
 
@@ -69,7 +69,7 @@ foreach ($stalkerParts as $stalkerPart) {
                                     FROM feed 
                                     WHERE title LIKE ? OR description LIKE ?");
 
-    $newResults = setResultFromStmt($stmt, $stalkerPart);
+    $newResults = setResultFromStmt($stmt, $stalkerPart, "feed");
 
     $results = array_merge($results, $newResults);
     $stmt->close();
@@ -78,7 +78,7 @@ foreach ($stalkerParts as $stalkerPart) {
                                     FROM products 
                                     WHERE product_name LIKE ? OR product_description LIKE ?");
 
-    $newResults = setResultFromStmt($stmt, $stalkerPart);
+    $newResults = setResultFromStmt($stmt, $stalkerPart, "product");
 
     $results = array_merge($results, $newResults);
     $stmt->close();
@@ -113,7 +113,9 @@ usort($results, "cmp");
 foreach ($results as $result) : ?>
     <div class="searchTest">
         <h2><?= $result->getName() . ' ' . $result->getScore() ?></h2>
-        <img id="rad" src="img/<?= $result->getPicture() ?>">
+        <?php if (!empty($result->getPicture()) && file_exists('img/'.$result->getImgPath().'/'.$result->getPicture())) : ?>
+            <img id="rad" src="img/<?= $result->getImgPath() ?>/<?= $result->getPicture() ?>">
+        <?php endif; ?>
         <p><?= $result->getDescription() ?></p>
     </div>
 <?php endforeach;

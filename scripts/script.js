@@ -106,7 +106,7 @@ $("#myForm").on('submit', function (ev) {
 
 
 $(document).ready(function() {
-    $(".btn").click(function (e) {
+    $("#chatBtn").click(function (e) {
         e.preventDefault();
         let clickBtnValue = $(this).val();
         let username = $("#sender").val();
@@ -306,10 +306,42 @@ $('.dropBtn').click(function (e) {
     $(this).siblings('.dropDown').slideToggle('300');
 });
 
+/* modal increment by one for img */
 
+$('.col').click(function() {
+    $('.modal-body').empty();
+    let title = $(this).parent('a').attr("title");
+    $('.modal-title').html(title);
+    $($(this).parents('div').html()).appendTo('.modal-body');
+    $('#imgInModal').modal({show:true});
+});
 
+$('#next-btn').click(function() {
+    let link = $('.modal-body a');
+    let number = parseInt(link.attr('title').match(/\S+$/));
+    number++;
+    if(number === 15) {
+        number = 1;
+    }
+    $('.modal-body').html($('.modal-content').find('a[title="Image ' + number + '"]').parent('div').html());
+    $('.modal-title').text('Image ' + number);
+});
+$('#prev-btn').click(function() {
+    let link = $('.modal-body a');
+    let number = parseInt(link.attr('title').match(/\S+$/));
+    number--;
+    if(number === 0) {
+        number = 14;
+    }
+    $('.modal-body').html($('.modal-content').find('a[title="Image ' + number + '"]').parent('div').html());
+    $('.modal-title').text('Image ' + number);
+});
 
+/* modal increment end */
 
+$('.aboutStalker').click(function () {
+    $('.blogImg').find();
+});
 
 /*
     Get data from the form upon submission (username and message)

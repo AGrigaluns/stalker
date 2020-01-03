@@ -63,31 +63,31 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
                     <div class="dropdown-menu">
                         <ul>
                             <?php foreach ($entry['dropdown'] as $subEntry) : ?>
-                                    <a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>" class="dropdown-item"><?= $subEntry['label'] ?></a>
+                                <a href="<?= $entry['slug'] ?>.html?type=<?= $subEntry['url'] ?>" class="dropdown-item"><?= $subEntry['label'] ?></a>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </li>
             <?php else : ?>
                 <li class="nav-item">
-                    <a href="<?= $entry['url'] ?>"><?= $entry['label'] ?></a>
+                    <a href="<?= $entry['url'] ?>" class="nav-link"><?= $entry['label'] ?></a>
                 </li>
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
-    <form id="searchForm" action="search.php" method="POST">
-                <input placeholder="Search..." type="search" id="search" name="stalker">
-        <button id="btn2" type="submit">
+    <form id="searchForm" action="search.php" method="POST" class="form-inline">
+        <input placeholder="Search..." type="search" id="search" name="stalker" class="form-control mr-sm-2">
+        <button id="btn2" type="submit" class="btn btn-outline-success my-2 my-sm-0">
             <i class='fas fa-search'></i>
         </button>
     </form>
-    <button id="shopBtn" type="submit">
+    <button id="shopBtn" type="submit" class="btn btn-outline-success my-2 my-sm-0">
         <a href="cart.php">
         <i class="fas fa-shopping-cart"></i>
             <span id="amountInCart"><?= $totalQty>0 ? $totalQty : '' ?></span>
         </a>
     </button>
-    <button class="registration"><a href="registration.php">Sign in</a></button>
+    <button class="btn btn-outline-primary my-2 my-sm-0"><a href="registration.php">Sign in</a></button>
     </div>
 </nav>
 <div class="kods">

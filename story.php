@@ -11,6 +11,7 @@ include 'includes/header.php';
 
 <div class="story">
     <h2 id="storyHeader">Story of Stalker</h2>
+    <img src="img/stalkerstory.jpg">
     <p>Based loosely on the novel Roadside Picnic by Arkady and Boris Strugatsky and film of the same name, Stalker by
         Andrei Tarkovsky, the S.T.A.L.K.E.R. games take place within the Zone, an alternate history version of the
         Chernobyl Exclusion Zone. In the world of the games, experimental labs were made in the Exclusion Zone which

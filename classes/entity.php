@@ -12,9 +12,9 @@ class entity extends searchable
      * @param $_picture
      * @param $_type
      */
-    public function __construct($_name, $_description, $_picture, $_type)
+    public function __construct($_name, $_description, $_picture, $_type = 1)
     {
-        parent::__construct($_name, $_description, $_picture);
+        parent::__construct($_name, $_description, $_picture, "zone");
         $this->_type = $_type;
     }
 
@@ -36,4 +36,5 @@ class entity extends searchable
         $this->_type = $type;
         return $this;
     }
+
 }

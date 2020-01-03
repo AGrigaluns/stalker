@@ -35,6 +35,8 @@ $stmt->bind_result($picture, $pictureLg);
                 <img src="img/grid/loader.png" class="modalImg" id="imgInModal">
             </div>
             <div class="modal-footer">
+                <button id="prev-btn" class="btn btn-secondary">Prev</button>
+                <button id="next-btn" class="btn btn-secondary">Next</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

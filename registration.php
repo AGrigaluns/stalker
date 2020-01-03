@@ -1,56 +1,6 @@
 <?php
 include 'includes/init.php';
-include 'includes/header.php';
-
-
-$errors = array();
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['password'] == $_POST['confirmPass']) {
-        $password = md5($_POST['password']);
-    }
-}
-
-if (isset($_POST['create'])) {
-    $fullName = $_POST['fullName'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirmPass = $_POST['confirmPass'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $address = $_POST['address'];
-    $city = $_POST['city'];
-}
-
-if (empty($username)) {
-    array_push($errors, "Username is required");
-}
-if (empty($email)) {
-    array_push($errors, "Email is required");
-}
-if (empty($password)) {
-    array_push($errors, "Password is required");
-}
-if ($password != $confirmPass) {
-    array_push($errors, "The two passwords do not match");
-}
-
-$user_check_query = "SELECT * FROM register WHERE username='$username' OR email='$email'";
-$result = mysqli_query($mysqli, $user_check_query);
-$user = mysqli_fetch_assoc($result);
-
-if ($user) {
-    if ($user['username'] === $username) {
-        array_push($errors, "Username already exists");
-    }
-
-    if ($user['email'] === $email) {
-        array_push($errors, "email already exists");
-    }
-}
-
-
-
+include 'includes/autoController.php';
 
 ?>
 

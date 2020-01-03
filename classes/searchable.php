@@ -5,7 +5,7 @@
  * @author Christophe Ferreboeuf <christophe@crealoz.fr>
  * This class is used to create objects that can be displayed in the search page
  */
-class searchable
+abstract class searchable
 {
     /**
      * This property is private
@@ -28,17 +28,20 @@ class searchable
      */
     protected $_score = 0;
 
+    protected $_imgPath;
+
     /**
      * searchable constructor.
      * @param string $_name
      * @param string $_description
      * @param string $_picture
      */
-    public function __construct($_name, $_description, $_picture)
+    public function __construct($_name, $_description, $_picture, $_imgPath)
     {
         $this->_name = $_name;
         $this->_description = $_description;
         $this->_picture = $_picture;
+        $this->_imgPath = $_imgPath;
     }
 
 
@@ -106,6 +109,14 @@ class searchable
     public function highlightResult($queryString){
         $this->_description = preg_replace('/('.$queryString.')/i', '<strong>'.$queryString.'</strong>', $this->_description, -1, $score);
         $this->_score += $score;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImgPath()
+    {
+        return $this->_imgPath;
     }
 
 }

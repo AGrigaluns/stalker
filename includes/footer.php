@@ -15,7 +15,7 @@
 
         </div>
         <textarea name="message" id="messageUser" placeholder="Type message..." required></textarea>
-        <button type="submit" class="btn" value="sendMessage">Send</button>
+        <button type="submit" class="btn" value="sendMessage" id="chatBtn">Send</button>
         <button type="button" class="btnCancel" onclick="closeForm()" id="formClose">Close</button>
     </form>
 </div>
