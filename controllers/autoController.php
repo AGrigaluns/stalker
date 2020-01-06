@@ -1,8 +1,9 @@
 <?php
 
 include 'includes/init.php';
-include 'includes/header.php';
-
+/**
+ * I could not test this code with my database but it should almost work
+ */
 
 $errors = array();
 
@@ -36,6 +37,9 @@ if (empty($password)) {
 }
 
 if (empty($errors)) {
+    /**
+     * you need to have a users table better than register that does not speak a lot to other developers :)
+     */
     $user_check_query = "SELECT username,email FROM register WHERE username = ?  OR email = ?";
 
     $stmt = $mysqli->prepare($user_check_query);
@@ -58,8 +62,11 @@ if (empty($errors)) {
 }
 
 if (count($errors) === 0) {
-    $mysqli = "INSERT INTO register SET username = ?, password = ?";
-    $stmt = $mysqli->prepare($mysqli);
+    /**
+     * insert should be in users table not in register
+     */
+    $query = "INSERT INTO register SET username = ?, password = ?";
+    $stmt = $mysqli->prepare($query);
     $result = $stmt->execute();
 
     if ($result) {
@@ -88,6 +95,13 @@ if (isset($_POST['signBtn'])) {
     $password = $_POST['password'];
 
     if (count($errors) === 0) {
+        /**
+         * if your users are stored in users (for a while you seem to call it register) you need to query from users
+         * SELECT * FROM register WHERE username=? OR password=? LIMIT 1
+         * but really better use users :)
+         *
+         * I changed the var name to $query as $mysqli contains the connection to database
+         */
         $query = "SELECT * FROM sign_in WHERE username=? OR password=? LIMIT 1";
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param('ss', $username, $password);
