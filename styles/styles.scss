@@ -13,6 +13,7 @@ $fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
 
 body {
   background-image: url("../img/background/stalker3.jpg");
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   color: $mainFontColor;
 }
@@ -637,6 +638,9 @@ span.price {
 
 #signBtn {
   margin-top: 2%;
+  a {
+    color: #000000;
+  }
 }
 
 .modalImg {

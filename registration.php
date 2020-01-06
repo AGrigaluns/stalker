@@ -16,7 +16,7 @@ include 'includes/autoController.php';
                 <input type="password" class="form-control-lg" id="InputPassword" placeholder="********" required>
             </form>
         </div>
-        <button type="button" id="signBtn" class="btn btn-primary">Sign in</button>
+        <button type="button" id="signBtn" class="btn btn-primary"><a href="user.php">Sign in</a></button><!-- no link on this button -->
     </div>
 </div>
 

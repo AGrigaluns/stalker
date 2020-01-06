@@ -307,6 +307,7 @@ $('.dropBtn').click(function (e) {
 });
 
 /* modal increment by one for img */
+/**
 
 $('.col').click(function() {
     $('.modal-body').empty();
