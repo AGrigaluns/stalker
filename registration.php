@@ -1,6 +1,6 @@
 <?php
 include 'includes/init.php';
-include 'includes/autoController.php';
+include 'includes/header.php';
 
 ?>
 
@@ -26,7 +26,7 @@ include 'includes/autoController.php';
     <div class="col-50">
         <div class="container">
             <h4>Registration</h4>
-            <form class="registrationForm" action="registration.php" method="post">
+            <form class="registrationForm" action="controllers/autoController.php" method="post">
                 <label for="fname"><i class="fa fa-user"></i>Full Name</label>
                 <input type="text" id="fname" name="fullName" placeholder="Janis Ozols" required>
                 <label for="userName">Username</label>
@@ -43,9 +43,9 @@ include 'includes/autoController.php';
                 <input type="text" id="adr" name="address" placeholder="Rozu iela 14A" required>
                 <label for="city"><i class="fa fa-institution"></i> City</label>
                 <input type="text" id="city" name="city" placeholder="Riga" required>
+                <button type="submit" id="signBtn" class="btn btn-primary">Sign up</button>
             </form>
         </div>
-        <button type="submit" id="signBtn" class="btn btn-primary">Sign up</button>
     </div>
 </div>
 
