@@ -16,7 +16,12 @@ $stmt->bind_result($picture, $pictureLg);
 
 <div class="containerImg">
     <div class="imgRow">
-        <?php while ($stmt->fetch()) : ?>
+        <?php while ($stmt->fetch()) :
+            /**
+             * You can add here something like images[] = "img/grid/<?= $pictureLg ?>" if it is simplier for you else you
+             * can do it in javascript
+             */
+            ?>
             <div class="col"><img src="img/grid/<?= $picture ?>" class="imgInput" data-src="img/grid/<?= $pictureLg ?>"></div>
         <?php endwhile; ?>
     </div>
@@ -35,8 +40,8 @@ $stmt->bind_result($picture, $pictureLg);
                 <img src="img/grid/loader.png" class="modalImg" id="imgInModal">
             </div>
             <div class="modal-footer">
-                <button id="prev-btn" class="btn btn-secondary">Prev</button>
-                <button id="next-btn" class="btn btn-secondary">Next</button>
+                <button id="prev-btn" class="btn btn-secondary">Prev</button><!-- a person clicks here, you get the previous image in the array and update src for imgInModal-->
+                <button id="next-btn" class="btn btn-secondary">Next</button><!-- a person clicks here, you get the next image in the array and update src for imgInModal -->
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
