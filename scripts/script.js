@@ -107,7 +107,8 @@ $("#myForm").on('submit', function (ev) {
 
 $(document).ready(function() {
     /**
-     * manage openForm here with ID I added #chatButtonFooter
+     * manage openForm here with ID I added #chatButtonFooter. if you manage it in the html, this file is not yet loaded
+     * therefore, you get the error.
      */
     $("#chatBtn").click(function (e) {
         e.preventDefault();
