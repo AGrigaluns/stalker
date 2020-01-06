@@ -12,16 +12,17 @@ include 'includes/header.php';
     <div class="leftColumn">
         <?php
         $typeId = 4;
-        $stmt = $mysqli->prepare("SELECT title, sec_title, description, img FROM feed WHERE typeId = ? order by creation_date desc");
+        $stmt = $mysqli->prepare("SELECT title, sec_title, description, img, creation_date FROM feed WHERE typeId = ? order by creation_date desc");
         $stmt->bind_param("i", $typeId);
-
 
         $stmt->execute();
 
-        $stmt->bind_result($title, $secTitle, $newsDesc, $newsImg);
+        $stmt->bind_result($title, $secTitle, $newsDesc, $newsImg, $createdAtTS);
 
-        while ($stmt->fetch()) : ?>
+        while ($stmt->fetch()) :
+            $createdAt = new DateTime($createdAtTS); ?>
             <div class="card">
+                <span class="blogDate"><?= $createdAt->format('d/m/Y \a\t H:i:s') ?></span>
                 <h2><?= $title ?></h2>
                 <h5><?= $secTitle ?></h5>
                 <div class="blogImg">
