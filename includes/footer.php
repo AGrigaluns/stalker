@@ -1,5 +1,6 @@
 </div>
-<button type="button" onclick="openForm()" class="chat">
+<!-- remove onclick from here and manage the button in you JS (see comment on line 110 in script.js) -->
+<button type="button" onclick="openForm()" class="chat" id="chatButtonFooter">
     Chat
 </button>
 <div class="chatPopup" id="chatForm2">

@@ -106,6 +106,9 @@ $("#myForm").on('submit', function (ev) {
 
 
 $(document).ready(function() {
+    /**
+     * manage openForm here with ID I added #chatButtonFooter
+     */
     $("#chatBtn").click(function (e) {
         e.preventDefault();
         let clickBtnValue = $(this).val();
