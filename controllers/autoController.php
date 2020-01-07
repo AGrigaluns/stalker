@@ -40,7 +40,7 @@ if (empty($errors)) {
     /**
      * you need to have a users table better than register that does not speak a lot to other developers :)
      */
-    $user_check_query = "SELECT username,email FROM register WHERE username = ?  OR email = ?";
+    $user_check_query = "SELECT username,email FROM users WHERE username = ?  OR email = ?";
 
     $stmt = $mysqli->prepare($user_check_query);
     $stmt->bind_param($username, $email);
@@ -65,7 +65,7 @@ if (count($errors) === 0) {
     /**
      * insert should be in users table not in register
      */
-    $query = "INSERT INTO register SET username = ?, password = ?";
+    $query = "INSERT INTO users SET username = ?, password = ?";
     $stmt = $mysqli->prepare($query);
     $result = $stmt->execute();
 
@@ -102,7 +102,7 @@ if (isset($_POST['signBtn'])) {
          *
          * I changed the var name to $query as $mysqli contains the connection to database
          */
-        $query = "SELECT * FROM sign_in WHERE username=? OR password=? LIMIT 1";
+        $query = "SELECT * FROM users WHERE username=? OR password=? LIMIT 1";
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param('ss', $username, $password);
 

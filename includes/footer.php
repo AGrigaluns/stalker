@@ -1,6 +1,7 @@
 </div>
+
 <!-- remove onclick from here and manage the button in you JS (see comment on line 110 in script.js) -->
-<button type="button" onclick="openForm()" class="chat" id="chatButtonFooter">
+<button type="button" class="chat" id="chatButtonFooter">
     Chat
 </button>
 <div class="chatPopup" id="chatForm2">
@@ -20,6 +21,33 @@
         <button type="button" class="btnCancel" onclick="closeForm()" id="formClose">Close</button>
     </form>
 </div>
+
+<footer>
+    <div class="webFoot">
+        <table class="footTable">
+            <td>
+                <ul><a href="#" class="leftLinks">About Us</a></ul>
+            </td>
+            <td>
+                <ul><a href="#" class="leftLinks">Terms of Use</a></ul>
+            </td>
+            <td>
+                <ul><a href="#" class="lightLinks">Privacy</a></ul>
+            </td>
+            <td>
+                <ul><a href="#" class="RightLinks">Help</a></ul>
+            </td>
+            <td>
+                <ul><a href="#" class="RightLinks">Jobs</a></ul>
+            </td>
+            <td>
+                <ul><a href="#" class="RightLinks">Fair Trade Policy</a></ul>
+            </td>
+        </table>
+        <p id="footText">S.T.A.L.K.E.R. &copy 2020</p>
+    </div>
+</footer>
+
 <script type="text/javascript" src="dist/main.js"></script>
 </body>
 </html>

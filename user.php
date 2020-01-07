@@ -20,7 +20,7 @@ include 'includes/autoController.php';
             <?php endif;?>
 
             <h4>Welcome, <?php echo $_SESSION['username']; ?></h4>
-            <a href="logout.php" style="color: red">Logout</a>
+            <a href="logout.php">Logout</a>
             <?php if (!$_SESSION['verified']): ?>
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     You need to verify your email address!

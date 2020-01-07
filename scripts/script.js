@@ -110,6 +110,20 @@ $(document).ready(function() {
      * manage openForm here with ID I added #chatButtonFooter. if you manage it in the html, this file is not yet loaded
      * therefore, you get the error.
      */
+
+
+    $("#chatButtonFooter").click(function (e) {
+        e.preventDefault();
+        $("#chatForm2").show();
+    });
+
+    $("#formClose").click(function (e) {
+        e.preventDefault();
+        $("#chatForm2").hide();
+    });
+
+
+
     $("#chatBtn").click(function (e) {
         e.preventDefault();
         let clickBtnValue = $(this).val();
@@ -344,9 +358,6 @@ $('#prev-btn').click(function() {
 
 /* modal increment end */
 
-$('.aboutStalker').click(function () {
-    $('.blogImg').find();
-});
 
 /*
     Get data from the form upon submission (username and message)

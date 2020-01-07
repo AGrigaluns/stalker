@@ -21,6 +21,9 @@ $stmt->bind_result($picture, $pictureLg);
              * You can add here something like images[] = "img/grid/<?= $pictureLg ?>" if it is simplier for you else you
              * can do it in javascript
              */
+
+
+
             ?>
             <div class="col"><img src="img/grid/<?= $picture ?>" class="imgInput" data-src="img/grid/<?= $pictureLg ?>"></div>
         <?php endwhile; ?>
