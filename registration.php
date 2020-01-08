@@ -9,14 +9,15 @@ include 'includes/header.php';
         <h4>Sign in / Registration</h4>
         <div class="container">
             <h4>Sign in</h4>
-            <form class="signIn">
+            <form class="signIn" action="controllers/autoController.php" method="post">
+                <input type="hidden" name="submissionType" value="login">
                 <label for="userName">Username</label>
                 <input type="text" name="username" id="username" placeholder="username123" required>
                 <label for="InputPassword">Password</label>
-                <input type="password" class="form-control-lg" id="InputPassword" placeholder="********" required>
+                <input type="password" class="form-control-lg" id="password" placeholder="********" required>
+                <button type="button" id="signInBtn" class="btn btn-primary" value="redirectIn">Sign in</button>
             </form>
         </div>
-        <button type="button" id="signBtn" class="btn btn-primary"><a href="user.php">Sign in</a></button><!-- no link on this button -->
     </div>
 </div>
 
@@ -27,6 +28,7 @@ include 'includes/header.php';
         <div class="container">
             <h4>Registration</h4>
             <form class="registrationForm" action="controllers/autoController.php" method="post">
+                <input type="hidden" name="submissionType" value="create">
                 <label for="fname"><i class="fa fa-user"></i>Full Name</label>
                 <input type="text" id="fname" name="fullName" placeholder="Janis Ozols" required>
                 <label for="userName">Username</label>
@@ -43,7 +45,7 @@ include 'includes/header.php';
                 <input type="text" id="adr" name="address" placeholder="Rozu iela 14A" required>
                 <label for="city"><i class="fa fa-institution"></i> City</label>
                 <input type="text" id="city" name="city" placeholder="Riga" required>
-                <button type="submit" id="signBtn" class="btn btn-primary">Sign up</button>
+                <button type="submit" id="signUpBtn" class="btn btn-primary" value="redirectUp">Sign up</button>
             </form>
         </div>
     </div>

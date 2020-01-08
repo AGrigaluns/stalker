@@ -16159,7 +16159,7 @@ h3 {
   border: none;
   opacity: 0.8;
   bottom: 50px;
-  z-index: 999;
+  z-index: 1;
 }
 
 @media screen and (max-width: 700px) {
@@ -16190,6 +16190,7 @@ h3 {
   padding: 10px;
   background-color: white;
   color: #04A1BF;
+  z-index: 999;
 }
 .formContainer textarea {
   width: calc(100% - 1px);
@@ -16526,6 +16527,7 @@ span.price {
 }
 
 .webFoot {
+  position: absolute;
   padding: 15px;
   width: 100%;
   background-color: #292929;

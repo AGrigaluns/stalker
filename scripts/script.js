@@ -20,6 +20,8 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+
+
 function myFunction() {
     if (window.pageYOffset >= sticky) {
         navigator.classList.add("sticky")
@@ -27,6 +29,10 @@ function myFunction() {
         navigator.classList.remove("sticky");
     }
 }
+
+/**
+ * Opens chat button
+ */
 
 let chatLog = document.getElementsByClassName("chat").innerHTML;
 
@@ -37,6 +43,13 @@ function openForm() {
 function closeForm() {
     document.getElementById("chatForm2").style.display = "none";
 }
+
+/**
+ * Cookies for contact form and date
+ * @param cname
+ * @param cvalue
+ * @param cdays
+ */
 
 function setCookie(cname, cvalue, cdays) {
     let d = new Date();
@@ -106,12 +119,6 @@ $("#myForm").on('submit', function (ev) {
 
 
 $(document).ready(function() {
-    /**
-     * manage openForm here with ID I added #chatButtonFooter. if you manage it in the html, this file is not yet loaded
-     * therefore, you get the error.
-     */
-
-
     $("#chatButtonFooter").click(function (e) {
         e.preventDefault();
         $("#chatForm2").show();
@@ -122,11 +129,8 @@ $(document).ready(function() {
         $("#chatForm2").hide();
     });
 
-
-
     $("#chatBtn").click(function (e) {
         e.preventDefault();
-        let clickBtnValue = $(this).val();
         let username = $("#sender").val();
         let message = $("#messageUser").val();
         let user_id = $("#user_id").val();
@@ -197,25 +201,6 @@ $(document).ready(function() {
         });
     });
 
-    $('.clearCart').click(function (e) {
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            headers: {"cache-control": "no-cache"},
-            url: 'controllers/ajax/clearCart.php',
-            async: true,
-            cache: false,
-            success: function (data) {
-                if (data == 1) {
-                    //$('#amountInCart').html('');
-                    location.reload();
-                    //update amount in cart
-                    //refresh page
-                }
-            }
-        })
-    });
-
     $('.removeItem').click(function (e) {
         e.preventDefault();
         let productId = $(this).attr('id');
@@ -276,6 +261,65 @@ $(document).ready(function() {
             }
         })
     });
+
+    /**
+     * manages the display of images in modal
+     */
+    if (typeof imgSeq !== 'undefined'){
+        $('.imgInput').click(function (e) {
+            imgSeq = $(this).data('seq');
+            loadImg($(this));
+        });
+        $('#next-btn').click(function() {
+            imgSeq++;
+            let img = $('#img'+imgSeq);
+            loadImg(img);
+        });
+        $('#prev-btn').click(function() {
+            imgSeq--;
+            let img = $('#img'+imgSeq);
+            loadImg(img);
+        });
+    }
+
+    /**
+     * Registration Form redirect
+     */
+
+    $('#signInBtn').click(function(e) {
+        e.preventDefault();
+        let username = $('#username').value();
+        let password = $('#password').value();
+        if (username == "user123" && password == "username123") {
+            alert ("Login successfully");
+            window.location.replace("user.php");
+        }
+        return false;
+    });
+        /**
+        let hasError = false;
+        $(".has-error, .has-success").removeClass("has-error").removeClass("has-success");
+        if ($("#username").val() == "") {
+            $("#username").closest(".signIn").addClass("has-error");
+            hasError = true;
+        } else {
+            $("#username").closest(".signIn").addClass("has-success");
+        }
+        if ($("#InputPassword").val() == "") {
+            $("#InputPassword").closest(".signIn").addClass("has-error");
+            hasError = true;
+        } else {
+            $("#InputPassword").closest(".signIn").addClass("has-success");
+        }
+        return !hasError;
+    });
+         */
+
+    $('#signUpBtn').click(function (e) {
+        e.preventDefault();
+        window.location.replace("user.php");
+    })
+
 });
 
     function updateMessages(response) {
@@ -312,15 +356,8 @@ $('.regButton').click(function (e) {
     $('.regForm').slideToggle('300');
 });
 
-$('.imgInput').click(function (e) {
-    let srcLg = $(this).data('src');
-    $('#imgInModal').attr('src', srcLg);
-    $('#exampleModalCenter').modal('show');
-});
-
 $('.dropBtn').click(function (e) {
     e.preventDefault();
-    console.log($(this).siblings('.dropDown'));
     $(this).siblings('.dropDown').slideToggle('300');
 });
 
@@ -333,28 +370,13 @@ $('.col').click(function() {
     $('.modal-title').html(title);
     $($(this).parents('div').html()).appendTo('.modal-body');
     $('#imgInModal').modal({show:true});
-});
+});**/
 
-$('#next-btn').click(function() {
-    let link = $('.modal-body a');
-    let number = parseInt(link.attr('title').match(/\S+$/));
-    number++;
-    if(number === 15) {
-        number = 1;
-    }
-    $('.modal-body').html($('.modal-content').find('a[title="Image ' + number + '"]').parent('div').html());
-    $('.modal-title').text('Image ' + number);
-});
-$('#prev-btn').click(function() {
-    let link = $('.modal-body a');
-    let number = parseInt(link.attr('title').match(/\S+$/));
-    number--;
-    if(number === 0) {
-        number = 14;
-    }
-    $('.modal-body').html($('.modal-content').find('a[title="Image ' + number + '"]').parent('div').html());
-    $('.modal-title').text('Image ' + number);
-});
+function loadImg(img) {
+    let srcLg = img.data('src');
+    $('#imgInModal').attr('src', srcLg);
+    $('#exampleModalCenter').modal('show');
+}
 
 /* modal increment end */
 
@@ -364,4 +386,4 @@ $('#prev-btn').click(function() {
     Make ajax call to sendMessage.php
     Read answer from the call and inform user (success vs error)
  */
-
+import './cart';

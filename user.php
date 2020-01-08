@@ -1,7 +1,8 @@
 <?php
 
 include 'includes/init.php';
-include 'includes/autoController.php';
+include 'includes/header.php';
+
 
 ?>
 

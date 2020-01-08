@@ -2,13 +2,16 @@
 include 'includes/init.php';
 
 include 'includes/header.php';
-
+$seq = 0;
 $stmt = $mysqli->prepare("SELECT pictures, large_pic FROM img_grid");
 
 $stmt->execute();
 
 $stmt->bind_result($picture, $pictureLg);
 ?>
+<script type="text/javascript">
+    let imgSeq = 0;
+</script>
 
 <div class="header-img">
     <h4 align="center">Stalker Art</h4>
@@ -21,12 +24,12 @@ $stmt->bind_result($picture, $pictureLg);
              * You can add here something like images[] = "img/grid/<?= $pictureLg ?>" if it is simplier for you else you
              * can do it in javascript
              */
-
-
-
             ?>
-            <div class="col"><img src="img/grid/<?= $picture ?>" class="imgInput" data-src="img/grid/<?= $pictureLg ?>"></div>
-        <?php endwhile; ?>
+            <div class="col"><img id="img<?= $seq ?>" src="img/grid/<?= $picture ?>" class="imgInput" data-src="img/grid/<?= $pictureLg ?>" data-seq="<?= $seq ?>"></div>
+        <?php
+            $seq++;
+        endwhile;
+        ?>
     </div>
 </div>
 
