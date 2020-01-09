@@ -111,13 +111,44 @@ $(document).ready(function() {
           success: function (output) {
               let redirectOutput = JSON.parse(output);
               if (redirectOutput.errors === false) {
-                  alert('User name or email is incorrect!')
+                  alert('User name or email is incorrect!');
               } else {
-                  window.location.href = 'user.php';
+                  window.location.href = 'index.php';
               }
           }
         });
-        return false;
+    });
+
+    $('#signUpBtn').click(function(e) {
+        e.preventDefault();
+        let fullName = $('#fname').val();
+        let username = $('#username').val();
+        let password = $('#password').val();
+        let email = $('#email').val();
+        let phone = $('#phone').val();
+        let address = $('#adr').val();
+        let city = $('#city').val();
+        $.ajax({
+            url: 'controllers/autoController.php',
+            data: {
+                fullName: fullName,
+                username: username,
+                password: password,
+                email: email,
+                phone: phone,
+                address: address,
+                city: city,
+            },
+            type: 'post',
+            success: function (output) {
+                let redirectOutput = JSON.parse(output);
+                if (redirectOutput === false) {
+
+                } else {
+                    window.location.href = 'user.php';
+                }
+            }
+        });
     });
         /**
         let hasError = false;
@@ -138,26 +169,21 @@ $(document).ready(function() {
     });
          */
 
-    $('#signUpBtn').click(function (e) {
-        e.preventDefault();
-        window.location.replace("user.php");
-    })
+});
 
-        /**
-         * registration buttons
-         */
+/**
+ * registration buttons
+ */
 
-        ($('.regButton'));
-    $('.regButton').click(function (e) {
-        e.preventDefault();
-        $('.regForm').slideToggle('300');
-    });
+($('.regButton'));
+$('.regButton').click(function (e) {
+    e.preventDefault();
+    $('.regForm').slideToggle('300');
+});
 
-    $('.dropBtn').click(function (e) {
-        e.preventDefault();
-        $(this).siblings('.dropDown').slideToggle('300');
-    });
-
+$('.dropBtn').click(function (e) {
+    e.preventDefault();
+    $(this).siblings('.dropDown').slideToggle('300');
 });
 
 
