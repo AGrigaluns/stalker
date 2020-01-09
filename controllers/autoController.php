@@ -1,9 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
-/**
- * I could not test this code with my database but it should almost work
- */
+
 
 $errors = array();
 

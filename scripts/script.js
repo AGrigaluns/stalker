@@ -99,12 +99,24 @@ $(document).ready(function() {
 
     $('#signInBtn').click(function(e) {
         e.preventDefault();
-        let username = $('#username').value();
-        let password = $('#password').value();
-        if (username === "user123" && password === "username123") {
-            alert ("Login successfully");
-            window.location.replace("user.php");
-        }
+        let username = $('#username').val();
+        let password = $('#password').val();
+        $.ajax({
+          url: 'controllers/autoController.php',
+          data: {
+              username: username,
+              password: password,
+          },
+            type: 'post',
+          success: function (output) {
+              let redirectOutput = JSON.parse(output);
+              if (redirectOutput.errors === false) {
+                  alert('User name or email is incorrect!')
+              } else {
+                  window.location.href = 'user.php';
+              }
+          }
+        });
         return false;
     });
         /**
