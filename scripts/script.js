@@ -54,7 +54,7 @@ $(window).resize(function() {
 $(document).ready(function() {
 
     /**
-     * navigation menu bar
+     * Burger navigation
      */
 
     $('#burger').on('click',function() {
