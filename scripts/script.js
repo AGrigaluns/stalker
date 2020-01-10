@@ -111,7 +111,7 @@ $(document).ready(function() {
           success: function (data) {
               let parsedData = JSON.parse(data);
               if (parsedData === false) {
-                  outputParse = alert("Invalid username or password!");
+                  parsedData = alert("Invalid username or password!");
               } else {
                   window.location.href = 'index.php';
               }
