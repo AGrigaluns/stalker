@@ -2,6 +2,11 @@
 include 'includes/init.php';
 
 include 'includes/header.php';
+
+/**
+ * Selects all pictures from img grid to display in modal
+ */
+
 $seq = 0;
 $stmt = $mysqli->prepare("SELECT pictures, large_pic FROM img_grid");
 
@@ -32,6 +37,8 @@ $stmt->bind_result($picture, $pictureLg);
         ?>
     </div>
 </div>
+
+<!-- bootstrap modal for pictures -->
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

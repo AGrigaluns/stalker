@@ -13,7 +13,7 @@ $senderId = 1;
  */
 
 $stmt = $mysqli->prepare("SELECT id, user_name FROM user_dat");
-/** here the results need to be bound to variables */
+/** here the results need bound to variables */
 $stmt->execute();
 $stmt->bind_result($recieverId, $user_name);
 ?>
@@ -21,7 +21,7 @@ $stmt->bind_result($recieverId, $user_name);
     <form class="formContainer" id="chatForm">
         <h3>Chat</h3>
         <input type="hidden" value="<?= $senderId ?>" name="user_id" id="user_id">
-        <!-- display a select dropdown to select the user we want to chat with. It will be done with a while loop. -->
+        <!-- displays a selected dropdown to select the user we want to chat with -->
         <select name="reciever_id" id="reciever_id">
             <option value="0">Select user</option>
             <?php

@@ -2,6 +2,8 @@
 include 'includes/init.php';
 include 'includes/header.php';
 ?>
+
+<!-- Stalker home pages -->
     <div class="text">
         <h3>About author</h3>
         <p>Let me start this review by stating that I am a computer geek and a gamer. Thus, I was predisposed
@@ -25,6 +27,8 @@ include 'includes/header.php';
         <p> After reading the book, now I'm
             going to try out the game! Just remember, "the only way to leave the Zone is to find a replacement."</p>
     </div>
+
+<!-- accordion for home page -->
     <button class="accordion">
         Good hunting Stalker!
     </button>

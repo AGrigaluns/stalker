@@ -4,6 +4,8 @@ include 'includes/header.php';
 
 ?>
 
+<!-- sign in form -->
+
 <div class="signIn">
     <div class="col-50">
         <h4>Sign in / Registration</h4>
@@ -21,7 +23,10 @@ include 'includes/header.php';
     </div>
 </div>
 
+<!-- opens a registration form -->
 <button type="submit" class="regButton">Registration</button>
+
+<!-- registration form -->
 
 <div class="regForm">
     <div class="col-50">

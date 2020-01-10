@@ -17,6 +17,8 @@ else :
     $products = array_keys($cart);
     $total = 0.00;
     ?>
+
+    <!-- Top part of cart details, show only when something is buy -->
     <div class="table-responsive">
         <h3 class="title2">Shopping Cart Details</h3>
         <table class="table" id="cart-table">
@@ -28,6 +30,8 @@ else :
                 <th scope="col" class="price-cell">Total</th>
             </tr>
             </thead>
+
+            <!-- body part of shopping cart that displays pictures of product quantity price -->
             <tbody>
             <?php
             $stmt = $mysqli->prepare("SELECT product_name, product_description, picture, price FROM products WHERE id = ?");
@@ -65,12 +69,14 @@ else :
                     <td class="price-cell"><?= $price ?></td>
                     <td id="linetotal_<?= $productId ?>" class="lineTotal price-cell"><?= $lineTotal ?></td>
                 </tr>
-                <!-- endforeach -->
+
             <?php endforeach; ?>
             <?php
             $vat = round($total * 0.21, 2);
             ?>
             </tbody>
+
+            <!-- footer part of shopping cart that displays all totals of price, vat, shipping -->
             <tfoot>
             <tr>
                 <td></td>
@@ -100,6 +106,7 @@ else :
         </table>
         <button class="clearCart" type="button" name="emptycart" value="Remove all">Empty cart</button>
         <button class="checkout" type="button" name="checkout"><a href="checkout.php">Proceed to checkout</a></button>
+        <!-- after proceed is going to payment page -->
     </div>
 <?php endif; ?>
 <?php include 'includes/footer.php'; ?>

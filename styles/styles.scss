@@ -11,6 +11,10 @@ $fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
 @import "cart";
 @import "nav";
 
+/**
+  main styles for all website
+ */
+
 body {
   background-image: url("../img/background/stalker3.jpg");
   background-attachment: fixed;
@@ -18,7 +22,45 @@ body {
   color: $mainFontColor;
 }
 
-#signBtn {
+header {
+  background-image: url("../img/background/stalker2.jpg");
+  padding: 30px;
+  text-align: center;
+  color: black;
+
+  img {
+    height: 100%;
+    overflow: auto;
+    margin: -25% auto 0;
+  }
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+/**
+  Registration form button hover
+ */
+
+#signInBtn, #signUpBtn {
   &:hover {
     background-color: #f5f5f5;
   }
@@ -27,6 +69,10 @@ body {
 #newsPic {
   width: 100%;
 }
+
+/**
+  Shop pictures, buttons, in stock, out of stock
+ */
 
 .pic {
   width: 100%;
@@ -45,6 +91,10 @@ body {
   color: #ff0000;
 }
 
+/**
+  ???
+ */
+
 .button {
   background-color: grey;
   border: none;
@@ -61,13 +111,17 @@ body {
   }
 }
 
+/**
+  search button
+ */
+
 #btn2 {
   cursor: pointer;
 }
 
-#storyHeader {
-    text-align: center;
-}
+/**
+  blog title
+ */
 
 .header {
     padding: 30px;
@@ -77,13 +131,63 @@ body {
     color: white;
 }
 
+/**
+  blog container
+ */
+
+.card {
+  background-color: #808080;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#blogPic {
+  width: calc(100% - 1px);
+  opacity: 50%;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+/**
+  blog div "row"
+ */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+/**
+  left side of blog post with pictures and description
+  media screen for devices
+ */
+
 .leftColumn {
   float: left;
   width: 73%;
   margin-left: calc(4% - 13px);
 }
 
-/* overwrite blog container placement */
+.blogImg {
+  background-color: #aaa;
+  padding: 20px;
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
 
 @media screen and (min-width: 400px) {
   .leftColumn {
@@ -109,7 +213,10 @@ body {
   }
 }
 
-
+/**
+  right side for blog only with pictures
+  media screen for both
+ */
 
 .rightColumn {
     float: right;
@@ -117,26 +224,16 @@ body {
     width: calc(25% - 10px);
 }
 
-.blogImg {
-    background-color: #aaa;
-    padding: 20px;
-  img {
+@media screen and (max-width: 800px) {
+  .leftColumn, .rightColumn {
     width: 100%;
-    margin-bottom: 10px;
+    padding: 0;
   }
 }
 
-.card {
-    background-color: #808080;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+/**
+  ???
+ */
 
 .footer {
     padding: 20px;
@@ -145,29 +242,10 @@ body {
     margin-top: 20px;
 }
 
-@media screen and (max-width: 800px) {
-    .leftColumn, .rightColumn {
-        width: 100%;
-        padding: 0;
-    }
-}
-
-header {
-  background-image: url("../img/background/stalker2.jpg");
-  padding: 30px;
-  text-align: center;
-  color: black;
-
-  img {
-    height: 100%;
-    overflow: auto;
-    margin: -25% auto 0;
-  }
-}
-
-h1 {
-    text-align: center;
-}
+/**
+  main container for website
+  media screen for devices
+ */
 
 .kods {
     border: 1px solid slategray;
@@ -192,6 +270,10 @@ h1 {
     width: 300px;
   }
 }
+
+/**
+  accordion for index.php
+ */
 
 .accordion {
     background-color: $mainBgColor;
@@ -219,6 +301,10 @@ h1 {
     transition: max-height 0.2s ease-out;
 }
 
+/**
+  sticky navigation
+ */
+
 .sticky {
     position: fixed;
     top: 0;
@@ -240,9 +326,9 @@ h1 {
     background-color: $mainBgColor;
 }
 
-h3 {
-    text-align: center;
-}
+/**
+  chat button
+ */
 
 .chat {
     animation: pulse 5s infinite;
@@ -251,12 +337,12 @@ h3 {
     left: 90%;
     padding: 17px 17px;
     border-radius: 10px 10px;
+    border: 1px solid #4CAF50;
     background-color: #4CAF50;
     width: 70px;
     text-align: center;
     cursor: pointer;
     color: white;
-    border: none;
     opacity: 0.8;
     bottom: 50px;
     z-index: 1;
@@ -269,6 +355,10 @@ h3 {
   }
 }
 
+/**
+  chat button pulse
+ */
+
 @keyframes pulse {
     0% {
         background-color: #292929;
@@ -277,6 +367,10 @@ h3 {
         background-color: #4CAF50;
     }
 }
+
+/**
+  chat form
+ */
 
 .chatPopup {
     display: none;
@@ -309,6 +403,10 @@ h3 {
         }
     }
 
+  /**
+    send button for chat
+   */
+
     .btn {
         background-color: #4CAF50;
         color: white;
@@ -318,25 +416,48 @@ h3 {
         width: 100%;
         margin-bottom: 10px;
         opacity: 0.8;
+        &:hover {
+          background-color: #4CAF28;
+        }
     }
+
+  /**
+   close button for chat
+  */
 
     .cancel {
         background-color: red;
     }
 }
 
+/**
+  ???
+ */
+
 .sidenav a:hover, .dropDown:hover .dropBtn {
     background-color: #ddd;
     color: black;
 }
 
+/**
+  radiation img in anomalies
+ */
+
 #rad {
     width: 190px;
 }
 
+/**
+  bloodsucker picture
+ */
+
 #sucker {
     width: 180px;
 }
+
+/**
+  chat style messages for user and admin
+ */
 
 #messages {
   border: 10px;
@@ -392,6 +513,10 @@ h3 {
   }
 }
 
+/**
+  contact form container
+ */
+
 .form-box {
   border: none;
   padding: 4%;
@@ -413,6 +538,10 @@ h3 {
     }
   }
 
+  /**
+    contact form submit button
+   */
+
   #mysubmit {
     width: 100px;
     padding: 14px;
@@ -425,6 +554,10 @@ h3 {
   }
 }
 
+/**
+  ???
+ */
+
 #card {
     padding: 14px;
     background: #808080;
@@ -434,11 +567,19 @@ h3 {
     }
 }
 
+/**
+  contact form text area
+ */
+
 #message {
     max-width: 650px;
     height: 200px;
     width: 95%;
 }
+
+/**
+  contact form agreement
+ */
 
 #agreement {
     margin-right: -150px;
@@ -464,6 +605,10 @@ h3 {
     margin: auto;
     padding: 10px;
 }
+
+/**
+  submited contact form with message and user data
+ */
 
 .mess-box {
     max-width: 700px;
@@ -494,23 +639,9 @@ h3 {
     line-height: 18px;
 }
 
-#blogPic {
-  width: calc(100% - 1px);
-  opacity: 50%;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 100%;
-  }
-}
-
-.row {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
+/**
+  payment form
+ */
 
 .col-25 {
   -ms-flex: 25%;
@@ -541,24 +672,15 @@ h3 {
   color: #000000;
 }
 
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-label {
-  margin-bottom: 10px;
-  display: block;
-}
-
 .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
 }
+
+/**
+  buttom hover for right side in navigation
+ */
 
 .btn:hover {
   background-color: blue;
@@ -568,6 +690,21 @@ span.price {
   float: right;
   color: grey;
 }
+
+/**
+  sign in button for form
+ */
+
+#signBtn {
+  margin-top: 2%;
+  a {
+    color: #000000;
+  }
+}
+
+/**
+  registration forms button
+ */
 
 .regButton {
   padding: 10px;
@@ -581,6 +718,10 @@ span.price {
 .regForm {
   display: none;
 }
+
+/**
+  modal for pictures
+ */
 
 .column {
   float: left;
@@ -636,27 +777,22 @@ span.price {
   }
 }
 
-#signBtn {
-  margin-top: 2%;
-  a {
-    color: #000000;
-  }
-}
-
 .modalImg {
   width: 100%;
 }
 
+/**
+  I cant figure it out how to make footer that always stays bottom of the page
+ */
+
 .webFoot {
-  position: absolute;
   padding: 15px;
   width: 100%;
   background-color: #292929;
   opacity: 80%;
   border: none;
   text-align: center;
-  margin-top: 2%;
+  margin-top: 4%;
 }
-
 
 

@@ -108,10 +108,10 @@ $(document).ready(function() {
               password: password,
           },
             type: 'post',
-          success: function (output) {
-              let redirectOutput = JSON.parse(output);
-              if (redirectOutput.errors === false) {
-                  alert('User name or email is incorrect!');
+          success: function (data) {
+              let parsedData = JSON.parse(data);
+              if (parsedData === false) {
+                  outputParse = alert("Invalid username or password!");
               } else {
                   window.location.href = 'index.php';
               }
@@ -140,13 +140,8 @@ $(document).ready(function() {
                 city: city,
             },
             type: 'post',
-            success: function (output) {
-                let redirectOutput = JSON.parse(output);
-                if (redirectOutput === false) {
-
-                } else {
-                    window.location.href = 'user.php';
-                }
+            success: function (data) {
+                let parsedData = JSON.parse(data);
             }
         });
     });

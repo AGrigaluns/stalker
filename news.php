@@ -9,6 +9,10 @@ $type = htmlentities($_GET['type']);
 
 $data = ['title' => $type];
 
+/**
+ * selects all names from news and display it in each dropdown
+ */
+
 $typeId = null;
 $typeName = null;
 $stmt = $mysqli->prepare("SELECT id, name FROM news WHERE slug = ?");
@@ -29,6 +33,10 @@ if ($typeId === null) :
     this type does not exist....
 <?php else : ?>
     <?php
+
+    /**
+     * display a news dropdown from feed
+     */
 
     $stmt = $mysqli->prepare("SELECT  title, sec_title, description, img, creation_date FROM feed WHERE typeId = ?");
     $stmt->bind_param("i", $typeId);

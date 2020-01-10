@@ -1,14 +1,5 @@
 <?php
 
-/**
- * 1- get cart from the session
- * 2- create a variable total that will permit to calculate it
- * 3- for each item retrieve the product from db
- *      3- display with price and qty
- *      4- calculate total for the line, display it and add it to total
- * 5- display total with and without VAT and VAT
- * 6- BONUS : propose shipping and payment methods with radio buttons
- */
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array(); ?>
 <?php if (empty($cart)) :
     echo "Your cart is empty";
@@ -16,6 +7,7 @@ else :
     $products = array_keys($cart);
     $total = 0.00;
     ?>
+
     <div class="table-responsive2">
         <h3 class="title2">Shopping Cart Details</h3>
         <table class="table2" id="cart-table">

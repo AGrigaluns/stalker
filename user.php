@@ -6,6 +6,8 @@ include 'includes/header.php';
 
 ?>
 
+<!-- this is seccessfull registration form where user gets in his profile -->
+
 <div class="userContainer">
     <div class="row">
         <div class="col-md-4 offset-md-4 home-wrapper">

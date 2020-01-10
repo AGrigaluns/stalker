@@ -4,6 +4,10 @@ $data['title'] = 'Shop';
 $type = htmlentities($_GET['type']);
 $data['type'] = $type;
 
+/**
+ * takes all products types from shop and displays in shop dropdown
+ */
+
 $idType = null;
 $typeName = null;
 $stmt = $mysqli->prepare("SELECT id, name FROM shop WHERE name = ?");
@@ -18,6 +22,11 @@ include 'includes/header.php'; ?>
     Does not exist...
 <?php else : ?>
     <?php
+
+    /**
+     * displays product types in each category
+     */
+
     $productName = null;
     $productDesc = null;
     $productPic = null;

@@ -4,6 +4,9 @@ include 'includes/init.php';
 include 'includes/header.php';
 
 ?>
+
+<!-- cart payment information pages for products -->
+
 <h4>Cart information</h4>
 <div class="row">
     <div class="col-75">

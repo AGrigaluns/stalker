@@ -8,6 +8,8 @@ include 'includes/header.php';
     <h4>S.T.A.L.K.E.R. blog</h4>
 </div>
 
+<!-- left side column of blog whit description and picture (in database called 'feed') -->
+
 <div class="row">
     <div class="leftColumn">
         <?php
@@ -36,6 +38,8 @@ include 'includes/header.php';
 
         $stmt->close();
         ?>
+
+        <!-- right side column 'popular' with img links to posts on left side -->
     </div>
     <div class="rightColumn">
         <div class="card">
@@ -59,6 +63,8 @@ include 'includes/header.php';
                 <p>Stalker 2</p>
             </div>
         </div>
+
+        <!-- 'More content here' column -->
         <div class="card">
             <h3>Follow Stalker</h3>
             <a href="#">More content here --></a>

@@ -9,6 +9,10 @@ $type = htmlentities($_GET['type']);
 
 $data = ['title' => $type];
 
+/**
+ * Takes all character types from database and puts in Zone dropdown to access
+ */
+
 $typeId = null;
 $typeName = null;
 $stmt = $mysqli->prepare("SELECT id, name FROM character_type WHERE name = ?");
@@ -33,6 +37,10 @@ if ($typeId === null) :
     this type does not exist....
 <?php else : ?>
 <?php
+
+    /**
+     *  Displays all entities for each character type with typeId
+     */
 
     $charName = null;
     $charDesc = null;
