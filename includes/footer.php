@@ -1,10 +1,11 @@
 </div>
 
-<!-- remove onclick from here and manage the button in you JS (see comment on line 110 in script.js) -->
+<!-- chat button to open chat form -->
 <button type="button" class="chat" id="chatButtonFooter">
     Chat
 </button>
 <div class="chatPopup" id="chatForm2">
+    <!-- chat form -->
     <form action="sendMessage.php" class="formContainer" method="post" id="chatForm">
         <h3>Chat</h3>
         <!--suppress XmlInvalidId -->
@@ -14,20 +15,21 @@
         <!--suppress XmlInvalidId -->
         <label for="message">Message</label>
         <div id="messages">
-
+        <!-- chat text area for receive messages from other users or admin -->
         </div>
+        <!-- chat text area for communication -->
         <textarea name="message" id="messageUser" placeholder="Type message..." required></textarea>
         <button type="submit" class="btn" value="sendMessage" id="chatBtn">Send</button>
         <button type="button" class="btnCancel" onclick="closeForm()" id="formClose">Close</button>
     </form>
 </div>
 
-
+<!-- website footer 'need fixing in css' -->
 <footer>
     <div class="webFoot">
         <table class="footTable">
             <td>
-                <ul><a href="#" class="leftLinks">About Us</a></ul>
+                <ul><a href="aboutUs.php" class="leftLinks">About Us</a></ul>
             </td>
             <td>
                 <ul><a href="#" class="leftLinks">Terms of Use</a></ul>

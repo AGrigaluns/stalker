@@ -109,6 +109,7 @@ $(document).ready(function() {
           },
             type: 'post',
           success: function (data) {
+              console.log(data);
               let parsedData = JSON.parse(data);
               if (parsedData === false) {
                   parsedData = alert("Invalid username or password!");
