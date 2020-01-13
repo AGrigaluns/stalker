@@ -1,8 +1,10 @@
 <?php
 
-ini_set('display_errors', E_ALL);
+include 'includes/init.php';
 
-include 'includes/databaseconnect.php';
+/**
+ * @todo : characters.php, communitiy.php and news.php are really alike. Check if a merge can be done
+ */
 
 $type = htmlentities($_GET['type']);
 
@@ -35,7 +37,6 @@ $title = null;
 $sec_title = null;
 $description = null;
 $stmt = $mysqli->prepare("SELECT title, sec_title, pic FROM community_types WHERE id = ?");
-print_r($mysqli->error);
 $stmt->bind_param("i", $typeId);
 $stmt->execute();
 $stmt->bind_result($title, $sec_title, $pic, $description);

@@ -6,12 +6,14 @@ $data = ['title' => 'anomalies'];
 include 'includes/databaseconnect.php';
 include 'includes/header.php';
 $senderId = 1;
+/**
+ * @todo check that a user is logged in and is an admin. the table users will contain a column "is_admin" that is boolean
+ */
 
 /**
  * retrieve all other user with mysql to be able to display a select dropdown
  *
  */
-
 $stmt = $mysqli->prepare("SELECT id, user_name FROM user_dat");
 /** here the results need bound to variables */
 $stmt->execute();

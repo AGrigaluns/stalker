@@ -2,6 +2,9 @@
 include 'includes/init.php';
 
 include 'includes/header.php';
+/**
+ * @todo set alt to img tags
+ */
 ?>
 
 <div class="header">

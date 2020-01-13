@@ -30,6 +30,9 @@ $(document).ready(function() {
             cache: false,
             success: function (data) {
                 if (data == 1) {
+                    /**
+                    @todo display alert
+                     */
                     //$('#amountInCart').html('');
                     location.reload();
                     //update amount in cart

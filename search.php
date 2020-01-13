@@ -7,7 +7,8 @@ include 'includes/header.php';
  * @param string $stalkerPart
  * @return array|searchable[]
  */
-function setResultFromStmt(mysqli_stmt $stmt, $stalkerPart, $classType) {
+function setResultFromStmt(mysqli_stmt $stmt, $stalkerPart, $classType)
+{
     /** @var $results searchable[] */
     $results = [];
     $request = '%' . $stalkerPart . '%';
@@ -35,19 +36,19 @@ if (isset($_POST['stalker'])) {
 
 $_SESSION['searchterms'][] = $stalker;
 
-echo 'Results for '. $stalker;
+echo 'Results for ' . $stalker;
 
 $hint = "";
 
 if ($stalker !== "") {
     $stalker = strtolower($stalker);
-    $len=strlen($stalker);
+    $len = strlen($stalker);
 }
 
 // this variable will store results
 $results = [];
 
-$stalkerParts = explode(' ' , $stalker);
+$stalkerParts = explode(' ', $stalker);
 $i = 0;
 $q = ' ';
 foreach ($stalkerParts as $stalkerPart) {
@@ -92,7 +93,8 @@ foreach ($stalkerParts as $stalkerPart) {
  * @param $b searchable
  * @return int
  */
-function cmp($a, $b) {
+function cmp($a, $b)
+{
     if ($a->getScore() == $b->getScore()) {
         return 0;
     }
@@ -100,8 +102,6 @@ function cmp($a, $b) {
 }
 
 usort($results, "cmp");
-
-
 
 
 /**
@@ -113,7 +113,7 @@ usort($results, "cmp");
 foreach ($results as $result) : ?>
     <div class="searchTest">
         <h2><?= $result->getName() . ' ' . $result->getScore() ?></h2>
-        <?php if (!empty($result->getPicture()) && file_exists('img/'.$result->getImgPath().'/'.$result->getPicture())) : ?>
+        <?php if (!empty($result->getPicture()) && file_exists('img/' . $result->getImgPath() . '/' . $result->getPicture())) : ?>
             <img id="rad" src="img/<?= $result->getImgPath() ?>/<?= $result->getPicture() ?>">
         <?php endif; ?>
         <p><?= $result->getDescription() ?></p>

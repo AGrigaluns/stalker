@@ -2,13 +2,7 @@
 include 'includes/init.php';
 include 'includes/header.php';
 /**
- * 1- get cart from the session
- * 2- create a variable total that will permit to calculate it
- * 3- for each item retrieve the product from db
- *      3- display with price and qty
- *      4- calculate total for the line, display it and add it to total
- * 5- display total with and without VAT and VAT
- * 6- BONUS : propose shipping and payment methods with radio buttons
+ * @todo : propose shipping and payment methods with radio buttons
  */
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array(); ?>
 <?php if (empty($cart)) :
@@ -44,7 +38,7 @@ else :
                 $total += $lineTotal; ?>
                 <tr>
                     <td>
-                        <span name="removeItem" class="removeItem fa fa-trash-alt" id="item_<?= $productId ?>">
+                        <span id="removeItem" class="removeItem fa fa-trash-alt" id="item_<?= $productId ?>">
                         </span>
                         <img src="img/shop/<?= $picture ?>" alt="<?= $productName ?>"/>
                         <?= $productName ?>

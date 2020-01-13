@@ -11,7 +11,7 @@ include 'includes/header.php';
         <h4>Sign in / Registration</h4>
         <div class="container">
             <h4>Sign in</h4>
-            <form class="signIn" action="controllers/autoController.php" method="post">
+            <form class="signIn" method="post">
                 <label for="userName">Username</label>
                 <input type="text" name="username" id="username" placeholder="username123" required>
                 <label for="InputPassword">Password</label>
@@ -31,7 +31,7 @@ include 'includes/header.php';
     <div class="col-50">
         <div class="container">
             <h4>Registration</h4>
-            <form class="registrationForm" action="controllers/autoController.php" method="post">
+            <form class="registrationForm" method="post">
                 <label for="fname"><i class="fa fa-user"></i>Full Name</label>
                 <input type="text" id="fname" name="fullName" placeholder="Janis Ozols" required>
                 <label for="userName">Username</label>
