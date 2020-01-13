@@ -2,17 +2,18 @@ import 'jquery';
 
 /**
  * this will manage the display of errors and messages
+ * @todo make this function available for all scripts (move it to script.js) and reuse it when needed (e.g. in cart.js)
  * @param data a
  */
 function manageMessages(data, redirect){
     let parsedData = JSON.parse(data);
     if (Array.isArray(parsedData.errors) && parsedData.errors.length) {
-        parsedData.errors.forEach(function (warning,index) {
+        parsedData.errors.forEach(function (warning) {
             $('#alerts').html(warning);
         });
         $('#alerts').addClass(['alert', 'alert-danger']);
     } else if (Array.isArray(parsedData.messages) && parsedData.messages.length) {
-        parsedData.messages.forEach(function (warning, index) {
+        parsedData.messages.forEach(function (warning) {
             $('#alerts').html(warning);
         });
         $('#alerts').addClass(['alert', 'alert-success']);
@@ -34,7 +35,7 @@ $(document).ready(function() {
         let username = $('#username').val();
         let password = $('#password').val();
         $.ajax({
-            url: 'controllers/autoController.php',
+            url: 'controllers/ajax/user.php',
             data: {
                 username: username,
                 password: password,
@@ -57,7 +58,7 @@ $(document).ready(function() {
         let address = $('#adr').val();
         let city = $('#city').val();
         $.ajax({
-            url: 'controllers/autoController.php',
+            url: 'controllers/ajax/user.php',
             data: {
                 fullName: fullName,
                 username: username,
@@ -78,7 +79,7 @@ $(document).ready(function() {
     $('#logoutBtn').click(function (e) {
         e.preventDefault();
         $.ajax({
-            url: 'controllers/autoController.php',
+            url: 'controllers/ajax/user.php',
             data: {
                 username: '',
                 password: '',
@@ -90,8 +91,6 @@ $(document).ready(function() {
             }
         });
     });
-
-
 
     /**
      * registration buttons

@@ -1,9 +1,9 @@
 <?php
-
-ini_set('display_errors', E_ALL);
-
 include 'includes/init.php';
 
+/**
+ * @todo : characters.php, communitiy.php and news.php are really alike. Check if a merge can be done (e.g. using a function that takes the query and sends back results)
+ */
 
 $type = htmlentities($_GET['type']);
 
@@ -33,10 +33,9 @@ $stmt->close();
 include 'includes/header.php';
 
 if ($typeId === null) :
-?>
+    ?>
     this type does not exist....
-<?php else : ?>
-<?php
+<?php else :
 
     /**
      *  Displays all entities for each character type with typeId
@@ -46,7 +45,6 @@ if ($typeId === null) :
     $charDesc = null;
     $charPic = null;
     $stmt = $mysqli->prepare("SELECT char_name, char_description, picture FROM entities WHERE typeId = ?");
-    print_r($mysqli->error);
     $stmt->bind_param("i", $typeId);
 
     /* execute query */
@@ -66,10 +64,5 @@ if ($typeId === null) :
 
     /* close statement */
     $stmt->close();
-    ?>
-
-<?php
 endif;
 include 'includes/footer.php';
-
-?>

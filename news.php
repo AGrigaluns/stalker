@@ -1,9 +1,10 @@
 <?php
 
-ini_set('display_errors', E_ALL);
-
 include 'includes/init.php';
 
+/**
+ * @todo : characters.php, communitiy.php and news.php are really alike. Check if a merge can be done
+ */
 
 $type = htmlentities($_GET['type']);
 
