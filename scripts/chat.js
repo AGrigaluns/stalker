@@ -72,9 +72,10 @@ $(document).ready(function () {
     });
 
     $('#reciever_id').change(function (ev) {
+        console.log($(this).val());
         $('#messages').html('');
         let sender = $("#user_id").val();
-        let reciever = $("#reciever_id").val();
+        let reciever = $(this).val();
         $.post({
             url: 'controllers/ajax/chat.php',
             data: {do: "messages_grab", sender: reciever, reciever: sender},

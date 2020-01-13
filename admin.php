@@ -43,8 +43,9 @@ $stmt->bind_result($recieverId, $user_name);
     </form>
 </div>
 
-<script type="text/javascript" src="scripts/script.js"></script>
 
-</body>
-</html>
+<?php
+include 'includes/footer.php';
+
+?>
 

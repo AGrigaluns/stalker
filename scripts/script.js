@@ -16,11 +16,13 @@ $(document).ready(function () {
         }
     });
 
+    const sticky = $("#navBar").offset().top;
+
     /**
      * sticky navigation
      */
     $(window).scroll(function () {
-        if (window.pageYOffset >= $("#navBar").offsetTop) {
+        if (window.pageYOffset >= sticky) {
             $("#navBar").addClass("sticky")
         } else {
             $("#navBar").removeClass("sticky");
@@ -76,95 +78,10 @@ $(document).ready(function () {
         $('#exampleModalCenter').modal('show');
     }
 
-    /**
-     * Registration Form redirect
-     */
-    $('#signInBtn').click(function (e) {
-        e.preventDefault();
-        let username = $('#username').val();
-        let password = $('#password').val();
-        $.ajax({
-            url: 'controllers/autoController.php',
-            data: {
-                username: username,
-                password: password,
-            },
-            type: 'post',
-            success: function (data) {
-                console.log(data);
-                let parsedData = JSON.parse(data);
-                if (parsedData === false) {
-                    parsedData = alert("Invalid username or password!");
-                } else {
-                    window.location.href = 'index.php';
-                }
-            }
-        });
-    });
-
-    $('#signUpBtn').click(function (e) {
-        e.preventDefault();
-        let fullName = $('#fname').val();
-        let username = $('#username').val();
-        let password = $('#password').val();
-        let email = $('#email').val();
-        let phone = $('#phone').val();
-        let address = $('#adr').val();
-        let city = $('#city').val();
-        $.ajax({
-            url: 'controllers/autoController.php',
-            data: {
-                fullName: fullName,
-                username: username,
-                password: password,
-                email: email,
-                phone: phone,
-                address: address,
-                city: city,
-                submissionType: 'create'
-            },
-            type: 'post',
-            success: function (data) {
-                let parsedData = JSON.parse(data);
-            }
-        });
-    });
-
-    /**
-     * registration buttons
-     */
-    $('.regButton').click(function (e) {
-        e.preventDefault();
-        $('.regForm').slideToggle('300');
-    });
-
-    $('.dropBtn').click(function (e) {
-        e.preventDefault();
-        $(this).siblings('.dropDown').slideToggle('300');
-    });
-
-    /**
-     let hasError = false;
-     $(".has-error, .has-success").removeClass("has-error").removeClass("has-success");
-     if ($("#username").val() == "") {
-            $("#username").closest(".signIn").addClass("has-error");
-            hasError = true;
-        } else {
-            $("#username").closest(".signIn").addClass("has-success");
-        }
-     if ($("#InputPassword").val() == "") {
-            $("#InputPassword").closest(".signIn").addClass("has-error");
-            hasError = true;
-        } else {
-            $("#InputPassword").closest(".signIn").addClass("has-success");
-        }
-     return !hasError;
-     });
-     */
-
 });
 
 
 import './cart';
 import './chat';
 import './cookies';
+import './user';

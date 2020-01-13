@@ -107,12 +107,11 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
         <!-- sign in, sign out button -->
         <?php if(isset($_SESSION['username']) && !empty($_SESSION['username'])) : ?>
             <?= $_SESSION['username'] ?>
-            <button class="btn btn-outline-primary my-2 my-sm-0">
+            <button class="btn btn-outline-primary my-2 my-sm-0" id="logoutBtn">
                 <i class="fas fa-sign-out-alt"></i>
             </button>
-
         <?php else : ?>
-    <button class="btn btn-outline-primary my-2 my-sm-0"><a href="registration.php">Sign in</a></button>
+    <button id="signInNav" class="btn btn-outline-primary my-2 my-sm-0"><a href="registration.php">Sign in</a></button>
         <?php endif ?>
     </div>
 </nav>

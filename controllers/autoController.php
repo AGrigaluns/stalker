@@ -3,7 +3,8 @@
 include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 
 
-$errors = array();
+$errors = [];
+$messages = [];
 
 try {
     if (isset($_POST['submissionType'])) {
@@ -17,15 +18,15 @@ try {
             $address = $_POST['address'];
             $city = $_POST['city'];
             if (empty($username)) {
-                array_push($errors, "Username is required");
+                throw new Exception("Username is required");
             }
             if (empty($email)) {
-                array_push($errors, "Email is required");
+                throw new Exception("Email is required");
             }
             if (empty($password)) {
-                array_push($errors, "Password is required");
+                throw new Exception("Password is required");
             } elseif (!empty($password) && !empty($confirmPass) && $password != $confirmPass) {
-                array_push($errors, "The two passwords do not match");
+                throw new Exception("The two passwords do not match");
             }
 
 
@@ -41,11 +42,11 @@ try {
                     if ($stmt->num_rows > 0) {
                         $stmt->fetch();
                         if ($usernameDb === $username) {
-                            array_push($errors, "Username already exists");
+                            throw new Exception("Username already exists");
                         }
 
                         if ($emailDb === $email) {
-                            array_push($errors, "email already exists");
+                            throw new Exception("email already exists");
                         }
                     }
                 } else {
@@ -72,17 +73,16 @@ try {
                 $_SESSION['username'] = $username;
                 $_SESSION['email'] = $email;
                 $_SESSION['verified'] = false;
-                $_SESSION['message'] = 'You are logged in!';
-                $_SESSION['type'] = 'alert-success';
+                $messages[] = 'You are logged in!';
             } else {
-                $_SESSION['error_msg'] = "Database error: Could not register user";
+                throw new Exception( "Database error: Could not register user");
             }
         } elseif ($_POST['submissionType'] == 'login') {
             if (empty($username)) {
-                $errors['username'] = 'Username or email required';
+                throw new Exception('Username or email required');
             }
             if (empty($password)) {
-                $errors['password'] = 'Password required';
+                throw new Exception( 'Password required');
             }
             if (count($errors) === 0) {
                 $query = "SELECT * FROM users WHERE username=?  LIMIT 1";
@@ -99,17 +99,21 @@ try {
                         $_SESSION['username'] = $user['username'];
                         $_SESSION['email'] = $user['email'];
                         $_SESSION['verified'] = $user['verified'];
-                        $_SESSION['message'] = 'You are logged in!';
-                        $_SESSION['type'] = 'alert-success';
+                        $messages[] = 'You are logged in!';
 
                     } else {
-                        $errors['login_fail'] = "Wrong username / password";
+                        throw new Exception( "Wrong username / password");
                     }
                 } else {
-                    $_SESSION['message'] = "Database error. Login failed!";
-                    $_SESSION['type'] = "alert-danger";
+                    throw new Exception( "Database error. Login failed!");
                 }
             }
+        } elseif ($_POST['submissionType'] == 'logout') {
+            unset($_SESSION['id']);
+            unset($_SESSION['username']);
+            unset($_SESSION['email']);
+            unset($_SESSION['verified']);
+            $messages[] = 'You are logged out!';
         } else {
             throw new Exception('The submission type is not recognized');
         }
@@ -120,4 +124,4 @@ try {
     $errors = $ex->getMessage();
 }
 
-echo json_encode($errors);
+echo json_encode(['errors' => $errors, 'messages' => $messages]);

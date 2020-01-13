@@ -20,7 +20,7 @@
         <!-- chat text area for communication -->
         <textarea name="message" id="messageUser" placeholder="Type message..." required></textarea>
         <button type="submit" class="btn" value="sendMessage" id="chatBtn">Send</button>
-        <button type="button" class="btnCancel" onclick="closeForm()" id="formClose">Close</button>
+        <button type="button" class="btnCancel" id="formClose">Close</button>
     </form>
 </div>
 

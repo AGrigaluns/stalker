@@ -116,11 +116,24 @@ h3 {
 }
 
 /**
+  Sign in buttons in navigation
+ */
+
+#signInNav:active {
+  background-color: #0000ff;
+  border-color: #ffffff;
+}
+
+/**
   search button
  */
 
 #btn2 {
   cursor: pointer;
+  &:active {
+    background-color: #0000ff;
+    border-color: #ffffff;
+  }
 }
 
 /**
