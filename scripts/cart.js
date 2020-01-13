@@ -1,5 +1,10 @@
 import 'jquery';
 
+function confirmPay (data) {
+    let confirmPay = JSON.parse(data);
+}
+
+
 $(document).ready(function() {
     $('.buy').click(function () {
         let productID = $(this).attr('id');
@@ -93,6 +98,12 @@ $(document).ready(function() {
                 }
             }
         })
+    });
+
+    $('.checkOutBtn').click(function (e) {
+        e.preventDefault();
+        $('#alerts').alert('Thank You For Your Purchase');
+        window.location.href = "cart.php";
     });
 
 });

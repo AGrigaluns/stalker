@@ -4,7 +4,7 @@ import 'jquery';
  * this will manage the display of errors and messages
  * @param data a
  */
-function manageMessages(data, redirect){
+function manageMessages(data) {
     let parsedData = JSON.parse(data);
     if (Array.isArray(parsedData.errors) && parsedData.errors.length) {
         parsedData.errors.forEach(function (warning,index) {
@@ -90,8 +90,6 @@ $(document).ready(function() {
             }
         });
     });
-
-
 
     /**
      * registration buttons

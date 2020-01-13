@@ -69,7 +69,7 @@ include 'includes/header.php';
                 <label>
                     <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                 </label>
-                <input type="submit" value="Continue to checkout" class="checkOutBtn">
+                <input type="submit" value="Confirm and pay" class="checkOutBtn">
             </form>
         </div>
     </div>
