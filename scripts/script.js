@@ -121,6 +121,7 @@ $(document).ready(function () {
                 phone: phone,
                 address: address,
                 city: city,
+                submissionType: 'create'
             },
             type: 'post',
             success: function (data) {

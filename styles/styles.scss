@@ -14,12 +14,17 @@ $fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
 /**
   main styles for all website
  */
-
+html {
+  height: 100%;
+}
 body {
   background-image: url("../img/background/stalker3.jpg");
   background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   color: $mainFontColor;
+  padding-bottom: 120px;
+  position: relative;
+  min-height: 100%;
 }
 
 header {
@@ -27,9 +32,8 @@ header {
   padding: 30px;
   text-align: center;
   color: black;
-
-  img {
-    height: 100%;
+  > img {
+    height: 900%;
     overflow: auto;
     margin: -25% auto 0;
   }
@@ -234,13 +238,6 @@ h3 {
 /**
   ???
  */
-
-.footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #ddd;
-    margin-top: 20px;
-}
 
 /**
   main container for website
@@ -784,6 +781,13 @@ span.price {
 /**
   I cant figure it out how to make footer that always stays bottom of the page
  */
+footer {
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 .webFoot {
   padding: 15px;
@@ -793,6 +797,7 @@ span.price {
   border: none;
   text-align: center;
   margin-top: 4%;
+  height: 100%;
 }
 
 

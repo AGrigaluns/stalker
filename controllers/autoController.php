@@ -5,12 +5,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 
 $errors = array();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['password'] == $_POST['confirmPass']) {
-        $password = md5($_POST['password']);
-    }
-}
-
 try {
     if (isset($_POST['submissionType'])) {
         $username = $_POST['username'];
@@ -64,6 +58,7 @@ try {
                 if ($stmt === false) {
                     throw new Exception('Could not prepare the query : '. $query);
                 }
+                $password = password_hash($password);
                 $stmt->bind_param('sssssss', $fullName,$username, $password, $email, $phone, $address, $city);
 
                 if ($stmt->execute()) {
@@ -90,9 +85,9 @@ try {
                 $errors['password'] = 'Password required';
             }
             if (count($errors) === 0) {
-                $query = "SELECT * FROM users WHERE username=? OR password=? LIMIT 1";
+                $query = "SELECT * FROM users WHERE username=?  LIMIT 1";
                 $stmt = $mysqli->prepare($query);
-                $stmt->bind_param('ss', $username, $password);
+                $stmt->bind_param('s', $username);
 
                 if ($stmt->execute()) {
                     $result = $stmt->get_result();
