@@ -106,10 +106,10 @@ $(document).ready(function() {
           data: {
               username: username,
               password: password,
+              submissionType: 'login'
           },
             type: 'post',
           success: function (data) {
-              console.log(data);
               let parsedData = JSON.parse(data);
               if (parsedData === false) {
                   parsedData = alert("Invalid username or password!");
@@ -139,6 +139,7 @@ $(document).ready(function() {
                 phone: phone,
                 address: address,
                 city: city,
+                submissionType: 'create'
             },
             type: 'post',
             success: function (data) {
@@ -146,25 +147,6 @@ $(document).ready(function() {
             }
         });
     });
-        /**
-        let hasError = false;
-        $(".has-error, .has-success").removeClass("has-error").removeClass("has-success");
-        if ($("#username").val() == "") {
-            $("#username").closest(".signIn").addClass("has-error");
-            hasError = true;
-        } else {
-            $("#username").closest(".signIn").addClass("has-success");
-        }
-        if ($("#InputPassword").val() == "") {
-            $("#InputPassword").closest(".signIn").addClass("has-error");
-            hasError = true;
-        } else {
-            $("#InputPassword").closest(".signIn").addClass("has-success");
-        }
-        return !hasError;
-    });
-         */
-
 });
 
 /**
