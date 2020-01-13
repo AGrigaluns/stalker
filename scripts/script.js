@@ -1,15 +1,12 @@
 import 'bootstrap';
 
-/**
- * Home page accordion
- * @type {HTMLCollectionOf<Element>}
- */
 
-let acc = document.getElementsByClassName("accordion");
-let i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
+$(document).ready(function () {
+    /**
+     * Home page accordion
+     * @type {HTMLCollectionOf<Element>}
+     */
+    $('.accordion').click(function () {
         this.classList.toggle("active");
         let panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
@@ -18,66 +15,53 @@ for (i = 0; i < acc.length; i++) {
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
     });
-}
 
-/**
- * sticky navigation
- */
+    /**
+     * sticky navigation
+     */
+    $(window).scroll(function () {
+        if (window.pageYOffset >= $("#navBar").offsetTop) {
+            $("#navBar").addClass("sticky")
+        } else {
+            $("#navBar").removeClass("sticky");
+        }
+    });
 
-window.onscroll = function() {myFunction()};
-
-let navigator = document.getElementById("navBar");
-let sticky = navigator.offsetTop;
-
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navigator.classList.add("sticky")
-    } else {
-        navigator.classList.remove("sticky");
-    }
-}
-
-/**
- * Navigation menu bar
- */
-
-$(window).resize(function() {
-    if (($(window).width() >= "980") && (!$(".menu-bar").is(":visible"))) {
-        console.log($(window).width());
-        $(".menu-bar").show();
-    } else if (($(window).width() < "980") && ($(".menu-bar").is(":visible"))) {
-        $(".menu-bar").hide();
-    }
-});
-
-
-$(document).ready(function() {
+    /**
+     * Navigation menu bar
+     */
+    $(window).resize(function () {
+        if (($(window).width() >= "980") && (!$(".menu-bar").is(":visible"))) {
+            console.log($(window).width());
+            $(".menu-bar").show();
+        } else if (($(window).width() < "980") && ($(".menu-bar").is(":visible"))) {
+            $(".menu-bar").hide();
+        }
+    });
 
     /**
      * Burger navigation
      */
-
-    $('#burger').on('click',function() {
+    $('#burger').on('click', function () {
         $(".menu-bar").slideToggle('300');
     });
 
     /**
      * manages the display of images in modal
      */
-
-    if (typeof imgSeq !== 'undefined'){
+    if (typeof imgSeq !== 'undefined') {
         $('.imgInput').click(function (e) {
             imgSeq = $(this).data('seq');
             loadImg($(this));
         });
-        $('#next-btn').click(function() {
+        $('#next-btn').click(function () {
             imgSeq++;
-            let img = $('#img'+imgSeq);
+            let img = $('#img' + imgSeq);
             loadImg(img);
         });
-        $('#prev-btn').click(function() {
+        $('#prev-btn').click(function () {
             imgSeq--;
-            let img = $('#img'+imgSeq);
+            let img = $('#img' + imgSeq);
             loadImg(img);
         });
     }
@@ -86,7 +70,6 @@ $(document).ready(function() {
      * modal for images
      * @param img
      */
-
     function loadImg(img) {
         let srcLg = img.data('src');
         $('#imgInModal').attr('src', srcLg);
@@ -96,31 +79,30 @@ $(document).ready(function() {
     /**
      * Registration Form redirect
      */
-
-    $('#signInBtn').click(function(e) {
+    $('#signInBtn').click(function (e) {
         e.preventDefault();
         let username = $('#username').val();
         let password = $('#password').val();
         $.ajax({
-          url: 'controllers/autoController.php',
-          data: {
-              username: username,
-              password: password,
-          },
+            url: 'controllers/autoController.php',
+            data: {
+                username: username,
+                password: password,
+            },
             type: 'post',
-          success: function (data) {
-              console.log(data);
-              let parsedData = JSON.parse(data);
-              if (parsedData === false) {
-                  parsedData = alert("Invalid username or password!");
-              } else {
-                  window.location.href = 'index.php';
-              }
-          }
+            success: function (data) {
+                console.log(data);
+                let parsedData = JSON.parse(data);
+                if (parsedData === false) {
+                    parsedData = alert("Invalid username or password!");
+                } else {
+                    window.location.href = 'index.php';
+                }
+            }
         });
     });
 
-    $('#signUpBtn').click(function(e) {
+    $('#signUpBtn').click(function (e) {
         e.preventDefault();
         let fullName = $('#fname').val();
         let username = $('#username').val();
@@ -146,42 +128,40 @@ $(document).ready(function() {
             }
         });
     });
-        /**
-        let hasError = false;
-        $(".has-error, .has-success").removeClass("has-error").removeClass("has-success");
-        if ($("#username").val() == "") {
+
+    /**
+     * registration buttons
+     */
+    $('.regButton').click(function (e) {
+        e.preventDefault();
+        $('.regForm').slideToggle('300');
+    });
+
+    $('.dropBtn').click(function (e) {
+        e.preventDefault();
+        $(this).siblings('.dropDown').slideToggle('300');
+    });
+
+    /**
+     let hasError = false;
+     $(".has-error, .has-success").removeClass("has-error").removeClass("has-success");
+     if ($("#username").val() == "") {
             $("#username").closest(".signIn").addClass("has-error");
             hasError = true;
         } else {
             $("#username").closest(".signIn").addClass("has-success");
         }
-        if ($("#InputPassword").val() == "") {
+     if ($("#InputPassword").val() == "") {
             $("#InputPassword").closest(".signIn").addClass("has-error");
             hasError = true;
         } else {
             $("#InputPassword").closest(".signIn").addClass("has-success");
         }
-        return !hasError;
-    });
-         */
+     return !hasError;
+     });
+     */
 
 });
-
-/**
- * registration buttons
- */
-
-($('.regButton'));
-$('.regButton').click(function (e) {
-    e.preventDefault();
-    $('.regForm').slideToggle('300');
-});
-
-$('.dropBtn').click(function (e) {
-    e.preventDefault();
-    $(this).siblings('.dropDown').slideToggle('300');
-});
-
 
 
 import './cart';

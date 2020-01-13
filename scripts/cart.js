@@ -1,7 +1,6 @@
 import 'jquery';
 
 $(document).ready(function() {
-
     $('.buy').click(function () {
         let productID = $(this).attr('id');
         $.post({

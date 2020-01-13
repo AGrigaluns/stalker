@@ -1,15 +1,5 @@
 import 'jquery';
 
-let chatLog = document.getElementsByClassName("chat").innerHTML;
-
-function openForm() {
-    document.getElementById("chatForm2").style.display = "block";
-}
-
-function closeForm() {
-    document.getElementById("chatForm2").style.display = "none";
-}
-
 function updateMessages(response) {
     let parsedOutput = JSON.parse(response);
     if (parsedOutput.results !== 0) {
@@ -27,13 +17,29 @@ function updateMessages(response) {
 
 $(document).ready(function () {
 
+    let chatRefresh;
     $("#chatButtonFooter").click(function (e) {
         e.preventDefault();
         $("#chatForm2").show();
+        chatRefresh =
+            setInterval(function () {
+                //get reciever and sender id and pass them to chat.php
+                let sender = $("#user_id").val();
+                let reciever = $("#reciever_id").val();
+                $.ajax({
+                    url: 'controllers/ajax/chat.php',
+                    data: {do: 'new_messages', sender: reciever, reciever: sender},
+                    type: "post",
+                    success: function (response) {
+                        updateMessages(response);
+                    }
+                });
+            }, 5000);
     });
 
     $("#formClose").click(function (e) {
         e.preventDefault();
+        clearInterval(chatRefresh);
         $("#chatForm2").hide();
     });
 
@@ -63,22 +69,6 @@ $(document).ready(function () {
                 }
             }
         });
-    });
-
-    $(function () {
-        setInterval(function () {
-            //get reciever and sender id and pass them to chat.php
-            let sender = $("#user_id").val();
-            let reciever = $("#reciever_id").val();
-            $.ajax({
-                url: 'controllers/ajax/chat.php',
-                data: {do: 'new_messages', sender: reciever, reciever: sender},
-                type: "post",
-                success: function (response) {
-                    updateMessages(response);
-                }
-            });
-        }, 5000);
     });
 
     $('#reciever_id').change(function (ev) {
