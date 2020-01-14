@@ -5,6 +5,8 @@ include 'includes/init.php';
  * @todo : characters.php, communitiy.php and news.php are really alike. Check if a merge can be done (e.g. using a function that takes the query and sends back results)
  */
 
+
+
 $type = htmlentities($_GET['type']);
 
 $data = ['title' => $type];

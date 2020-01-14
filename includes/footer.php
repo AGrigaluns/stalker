@@ -32,7 +32,7 @@
                 <ul><a href="aboutUs.php" class="leftLinks">About Us</a></ul>
             </td>
             <td>
-                <ul><a href="#" class="leftLinks">Terms of Use</a></ul>
+                <ul><a href="termsAndUse.php" class="leftLinks">Terms of Use</a></ul>
             </td>
             <td>
                 <ul><a href="#" class="lightLinks">Privacy</a></ul>
