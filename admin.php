@@ -3,12 +3,22 @@
 ini_set('display_errors', E_ALL);
 
 $data = ['title' => 'anomalies'];
-include 'includes/databaseconnect.php';
+include 'includes/init.php';
 include 'includes/header.php';
 $senderId = 1;
 /**
  * @todo check that a user is logged in and is an admin. the table users will contain a column "is_admin" that is boolean
  */
+
+if($_SESSION['user_name']['user_id'] == false OR $_SESSION['user_name']['user_id'] == true) {
+    echo 'Cannot access! Only Admin';
+} else {
+    if($_SESSION['user_name']['user_id'] == true) {
+        echo 'Welcome Admin';
+    }
+}
+
+
 
 /**
  * retrieve all other user with mysql to be able to display a select dropdown

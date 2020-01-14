@@ -33,6 +33,19 @@ try {
         /**
          * @todo if the user is logged in, we take the username in session in the datatable user_dat, we need to add a column user_id that can be empty or contains the user_id
          */
+
+        /**
+         * not sore how to do this login!!!
+
+        if (!empty($userId)) {
+            $_SESSION['username'] = $userId['username'];
+            $username = $mysqli->prepare("SELECT id FROM user_dat WHERE user_id = ?");
+            $username->bind_param("i", $user_id);
+            $username->execute();
+            $username->store_result();
+        }
+        */
+
         $username = $_POST['username'];
         $recieverId = $_POST['reciever_id'];
         if (!is_null($userId)) {

@@ -1,12 +1,10 @@
 <?php
 include 'includes/init.php';
 include 'includes/header.php';
-/**
- * @todo : propose shipping and payment methods with radio buttons
- */
+
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array(); ?>
 <?php if (empty($cart)) :
-    echo "Your cart is empty";
+    echo "You dont have any items in your cart.";
 else :
     $products = array_keys($cart);
     $total = 0.00;
@@ -75,7 +73,21 @@ else :
             <tr>
                 <td></td>
                 <td></td>
-                <th>Shipping</th>
+                <th>
+                    Shipping
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option1" autocomplete="off">
+                        DPD Pick Up
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off">
+                        DPD Courier
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off">
+                        Post
+                    </label>
+                </th>
                 <th class="price-cell">0</th>
             </tr>
             <tr>

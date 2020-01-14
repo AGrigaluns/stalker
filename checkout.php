@@ -41,10 +41,31 @@ include 'includes/header.php';
                         <h3>Payment</h3>
                         <label for="fname">Accepted Cards</label>
                         <div class="icon-container">
-                            <i class="fa fa-cc-visa"></i>
-                            <i class="fa fa-cc-amex"></i>
-                            <i class="fa fa-cc-mastercard"></i>
-                            <i class="fa fa-cc-discover"></i>
+                            <label class="btn btn-success">
+                                <input type="radio" name="options" id="option1" autocomplete="off">
+                                <i class="fas fa-cash-register"></i>
+                                Pay in shop
+                            </label>
+                            <label class="btn btn-success">
+                                <input type="radio" name="options" id="option2" autocomplete="off">
+                                <i class="fas fa-file-invoice"></i>
+                                Bank
+                            </label>
+                            <label class="btn btn-success">
+                                <input type="radio" name="options" id="option3" autocomplete="off">
+                                <i class="fas fa-credit-card"></i>
+                                Credit card
+                            </label>
+                            <label class="btn btn-success">
+                                <input type="radio" name="options" id="option4" autocomplete="off">
+                                <i class="fas fa-money-bill-wave"></i>
+                                Pay on delivery
+                            </label>
+                            <label class="btn btn-success">
+                                <input type="radio" name="options" id="option4" autocomplete="off">
+                                PayPal
+                            </label>
+
                         </div>
                         <label for="cname">Name on Card</label>
                         <input type="text" id="cname" name="cardname" placeholder="Janis Ozols">

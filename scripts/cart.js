@@ -31,8 +31,15 @@ $(document).ready(function() {
             success: function (data) {
                 if (data == 1) {
                     /**
-                    @todo display alert
+                     * i think i need to display '#alerts' in cart.php with php
                      */
+                    $('#alerts').addClass(['alert', 'alert-success']);
+                    setTimeout(function () {
+                        window.location.href = "cart.php";
+                    }, 2000);
+                } else {
+                    $('#alerts').html('nothing happened').addClass(['alert', 'alert-info']);
+
                     //$('#amountInCart').html('');
                     location.reload();
                     //update amount in cart

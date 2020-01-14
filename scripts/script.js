@@ -1,7 +1,10 @@
 import 'bootstrap';
 
 
+
+
 $(document).ready(function () {
+
     /**
      * Home page accordion
      * @type {HTMLCollectionOf<Element>}

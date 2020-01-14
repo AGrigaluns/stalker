@@ -5,7 +5,8 @@ import 'jquery';
  * @todo make this function available for all scripts (move it to script.js) and reuse it when needed (e.g. in cart.js)
  * @param data a
  */
-function manageMessages(data) {
+
+ function manageMessages(data) {
     let parsedData = JSON.parse(data);
     if (Array.isArray(parsedData.errors) && parsedData.errors.length) {
         parsedData.errors.forEach(function (warning) {

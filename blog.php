@@ -2,9 +2,6 @@
 include 'includes/init.php';
 
 include 'includes/header.php';
-/**
- * @todo set alt to img tags
- */
 ?>
 
 <div class="header">
@@ -31,7 +28,7 @@ include 'includes/header.php';
                 <h2><?= $title ?></h2>
                 <h5><?= $secTitle ?></h5>
                 <div class="blogImg">
-                    <img src="img/blog/<?= $newsImg ?>">
+                    <img alt="database pictures" src="img/blog/<?= $newsImg ?>">
                     <p><?= nl2br($newsDesc) ?></p>
                 </div>
             </div>
@@ -49,19 +46,19 @@ include 'includes/header.php';
             <h3>Popular</h3>
             <div class="blogImg">
                 <a href="#">
-                    <img id="blogPic" class="aboutStalker" src="img/blog/forblog.jpg">
+                    <img alt="stalker movie" id="blogPic" class="aboutStalker" src="img/blog/forblog.jpg">
                 </a>
                 <p>About Stalker 1979</p>
             </div>
             <div class="blogImg">
                 <a href="#">
-                <img id="blogPic" class="metro" src="img/blog/blogpic2.jpeg">
+                <img alt="metro 2033 game" id="blogPic" class="metro" src="img/blog/blogpic2.jpeg">
                 </a>
                 <p>Metro 2033</p>
             </div>
             <div class="blogImg">
                 <a href="#">
-                <img id="blogPic" class="secStalker" src="img/news/stalker2.jpeg">
+                <img alt="upcoming stalker game" id="blogPic" class="secStalker" src="img/news/stalker2.jpeg">
                 </a>
                 <p>Stalker 2</p>
             </div>
