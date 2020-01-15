@@ -120,4 +120,10 @@ if (isset($_SESSION) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     </div>
 </nav>
 <div class="kods">
+    <?php foreach ($errors as $error) : ?>
+        <?php /* @var $error stalkerError*/ ?>
+        <div class="alert alert-<?= $error->getType() ?>" role="alert">
+            <?= $error->getMessage() ?>
+        </div>
+    <?php endforeach; ?>
     <div id="alerts"></div>

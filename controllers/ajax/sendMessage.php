@@ -38,9 +38,6 @@ try {
             $_SESSION['username'] = $username;
         }
 
-        /**
-         * not sore how to do this login!!!
-         *
         if (!empty($userId)) {
             $_SESSION['username'] = $userId['username'];
             $username = $mysqli->prepare("SELECT id FROM user_dat WHERE user_id = ?");

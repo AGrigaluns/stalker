@@ -33,8 +33,8 @@ $(document).ready(function() {
      */
     $('#signInBtn').click(function (e) {
         e.preventDefault();
-        let username = $('#username').val();
-        let password = $('#password').val();
+        let username = $('#usernameLogin').val();
+        let password = $('#passwordLogin').val();
         $.ajax({
             url: 'controllers/ajax/user.php',
             data: {
@@ -52,8 +52,9 @@ $(document).ready(function() {
     $('#signUpBtn').click(function (e) {
         e.preventDefault();
         let fullName = $('#fname').val();
-        let username = $('#username').val();
-        let password = $('#password').val();
+        let username = $('#usernameSignUp').val();
+        let password = $('#passwordSignUp').val();
+        let confirmPass = $('#confirmPass').val();
         let email = $('#email').val();
         let phone = $('#phone').val();
         let address = $('#adr').val();
@@ -64,6 +65,7 @@ $(document).ready(function() {
                 fullName: fullName,
                 username: username,
                 password: password,
+                confirmPass: confirmPass,
                 email: email,
                 phone: phone,
                 address: address,

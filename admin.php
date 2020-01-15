@@ -4,22 +4,22 @@ ini_set('display_errors', E_ALL);
 
 $data = ['title' => 'anomalies'];
 include 'includes/init.php';
-include 'includes/header.php';
-$senderId = 1;
-/**
- * @todo check that a user is logged in and is an admin. the table users will contain a column "is_admin" that is boolean
- */
-
-if($_SESSION['user_name']['user_id'] == false OR $_SESSION['user_name']['user_id'] == true) {
-    echo 'Cannot access! Only Admin';
-} else {
-    if($_SESSION['user_name']['user_id'] == true) {
-        echo 'Welcome Admin';
+try {
+    if (!isset($_SESSION['user']) || !isset($_SESSION['user']['id']) || empty($_SESSION['user']['id'])) {
+        throw new Exception('Please log in !');
     }
+    if (isset($_SESSION['user']['is_admin']) && empty($_SESSION['user']['is_admin']) && $_SESSION['user']['is_admin'] === 1) {
+        throw new Exception('You are not allowed to see that');
+    }
+
+    $senderId = 1;
+} catch (Exception $ex){
+    $errors[] = new stalkerError('danger', $ex->getMessage());
 }
+include 'includes/header.php';
 
 
-
+if (empty($errors)) :
 /**
  * retrieve all other user with mysql to be able to display a select dropdown
  *
@@ -57,6 +57,7 @@ $stmt->bind_result($recieverId, $user_name);
 
 
 <?php
+endif;
 include 'includes/footer.php';
 
 ?>

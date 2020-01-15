@@ -3,6 +3,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/init.php';
 $errors = [];
 $messages = [];
+
 try {
     if (isset($_POST['submissionType'])) {
         $username = $_POST['username'];
@@ -90,6 +91,7 @@ try {
                         $_SESSION['user']['username'] = $user['username'];
                         $_SESSION['user']['email'] = $user['email'];
                         $_SESSION['user']['verified'] = $user['verified'];
+                        $_SESSION['user']['is_admin'] = $user['is_admin'];
                         $messages[] = 'You are logged in!';
 
                     } else {
